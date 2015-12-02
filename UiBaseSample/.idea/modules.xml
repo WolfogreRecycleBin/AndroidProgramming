@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LayoutIncludeSample/LayoutIncludeSample.iml" filepath="$PROJECT_DIR$/LayoutIncludeSample/LayoutIncludeSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LayoutInflateSample/LayoutInflateSample.iml" filepath="$PROJECT_DIR$/LayoutInflateSample/LayoutInflateSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LinearLayoutSample/LinearLayoutSample.iml" filepath="$PROJECT_DIR$/LinearLayoutSample/LinearLayoutSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnClickSample/OnClickSample.iml" filepath="$PROJECT_DIR$/OnClickSample/OnClickSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RelativLayoutSample/RelativLayoutSample.iml" filepath="$PROJECT_DIR$/RelativLayoutSample/RelativLayoutSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ResourceBaseSample/ResourceBaseSample.iml" filepath="$PROJECT_DIR$/ResourceBaseSample/ResourceBaseSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UiBaseSample.iml" filepath="$PROJECT_DIR$/UiBaseSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewStubSample/ViewStubSample.iml" filepath="$PROJECT_DIR$/ViewStubSample/ViewStubSample.iml" />
+    </modules>
+  </component>
+</project>
