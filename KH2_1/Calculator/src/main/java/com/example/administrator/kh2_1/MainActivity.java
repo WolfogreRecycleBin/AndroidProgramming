@@ -48,17 +48,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case "＋/－":{
-                //TODO:
+                String str = textView.getText().toString();
+                if(!str.isEmpty()){
+                    if(str.charAt(0) == '-')
+                        textView.setText(str.substring(1,str.length()));
+                    else
+                        textView.setText("-" + str);
+                }
                 break;
             }
             case "←":{
                 String str = textView.getText().toString();
-                textView.setText(str.substring(0, str.length() - 1));
+                if(!str.isEmpty())
+                    textView.setText(str.substring(0, str.length() - 1));
                 break;
             }
             case "=":{
                 isNew = true;
-                textView.setText(textView.getText() + "\n我不知道\n");
+                try{
+                    textView.setText(textView.getText() + "\n" + Analyser.analy(textView.getText().toString()));
+                }catch (Exception ex){
+                    textView.setText(textView.getText() + "\n" + ex.getMessage());
+                }
                 break;
             }
             default:
