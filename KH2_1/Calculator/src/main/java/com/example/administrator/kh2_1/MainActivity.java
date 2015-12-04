@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import com.greenpineyu.fel.FelEngine;
-import com.greenpineyu.fel.FelEngineImpl;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     boolean isNew;
@@ -60,16 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case "=":{
                 isNew = true;
-                try
-                {
-                    FelEngine fe = new FelEngineImpl();
-                    Object result = fe.eval(textView.getText().toString());
-                    textView.setText(textView.getText() + "\n" + result);
-                }
-                catch (Exception ex)
-                {
-                    textView.setText(ex.getMessage() + "\n");
-                }
+                textView.setText(textView.getText() + "\n我不知道\n");
                 break;
             }
             default:
