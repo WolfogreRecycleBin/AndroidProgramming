@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ActivityBaseSample/ActivityBaseSample.iml" filepath="$PROJECT_DIR$/ActivityBaseSample/ActivityBaseSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ActivityDataExSample/ActivityDataExSample.iml" filepath="$PROJECT_DIR$/ActivityDataExSample/ActivityDataExSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ActivityLifeCycleSample/ActivityLifeCycleSample.iml" filepath="$PROJECT_DIR$/ActivityLifeCycleSample/ActivityLifeCycleSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ActivityTaskFragment.iml" filepath="$PROJECT_DIR$/ActivityTaskFragment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FragmentBaseSample/FragmentBaseSample.iml" filepath="$PROJECT_DIR$/FragmentBaseSample/FragmentBaseSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StartActivityForResultSample/StartActivityForResultSample.iml" filepath="$PROJECT_DIR$/StartActivityForResultSample/StartActivityForResultSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TaskModelSample/TaskModelSample.iml" filepath="$PROJECT_DIR$/TaskModelSample/TaskModelSample.iml" />
+    </modules>
+  </component>
+</project>

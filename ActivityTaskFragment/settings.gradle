@@ -1,0 +1,1 @@
+include ':ActivityBaseSample', ':ActivityDataExSample', ':FragmentBaseSample', ':ActivityLifeCycleSample', ':StartActivityForResultSample', ':TaskModelSample'
