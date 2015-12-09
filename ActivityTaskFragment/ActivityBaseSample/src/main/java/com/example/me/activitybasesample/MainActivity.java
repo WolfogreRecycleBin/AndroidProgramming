@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(MainActivity.this,SecondActivity.class);
-                //Intet
+                //note:Intent 是一个消息对象，由系统维护，用于在构件之间传递数据
                 startActivity(intent);
             }
         });
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:134") );
+                //note:按下后自动拨打134
                 try {
                     startActivity(intent);
                 }catch (Exception e){

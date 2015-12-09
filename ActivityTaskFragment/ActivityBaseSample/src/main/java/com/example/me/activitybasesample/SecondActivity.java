@@ -21,6 +21,7 @@ public class SecondActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent =new Intent(SecondActivity.this,MainActivity.class);
                 startActivity(intent);
+                //note:打开新的MainActivity，不是原来的MainActivity
                // finish();
             }
         });
@@ -29,6 +30,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                //note:返回原来的MainActivity
             }
         });
     }
