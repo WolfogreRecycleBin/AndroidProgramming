@@ -20,5 +20,5 @@
 
     </application>
     <uses-permission  android:name="android.permission.CALL_PHONE" />
-
+    //note:因为打电话涉及安全，需要在配置文件中声明权限，同时代码中要放在try中
 </manifest>
