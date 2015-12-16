@@ -1,0 +1,1 @@
+include ':UiThreadSample', ':CustomComponentsSample', ':Canvas2DSample', ':FingerPaintSample'

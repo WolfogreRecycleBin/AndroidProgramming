@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Canvas2DSample/Canvas2DSample.iml" filepath="$PROJECT_DIR$/Canvas2DSample/Canvas2DSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CustomComponentsSample/CustomComponentsSample.iml" filepath="$PROJECT_DIR$/CustomComponentsSample/CustomComponentsSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FingerPaintSample/FingerPaintSample.iml" filepath="$PROJECT_DIR$/FingerPaintSample/FingerPaintSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UiThreadSample/UiThreadSample.iml" filepath="$PROJECT_DIR$/UiThreadSample/UiThreadSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WidgetBase.iml" filepath="$PROJECT_DIR$/WidgetBase.iml" />
+    </modules>
+  </component>
+</project>

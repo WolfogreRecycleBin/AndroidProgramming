@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CustomComponentsSample</string>
+    <declare-styleable name="GV_atts">
+        <attr name="gx" format="integer" />
+        <attr name="gy" format="integer" />
+        <attr name="gcolor1" format="color" />
+        <attr name="gcolor2" format="color" />
+        <attr name="gcolor3" format="color" />
+        <attr name="gcolor4" format="color" />
+    </declare-styleable>
+</resources>
