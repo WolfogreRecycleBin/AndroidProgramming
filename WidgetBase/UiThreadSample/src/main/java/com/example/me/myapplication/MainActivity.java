@@ -56,11 +56,11 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-               // loadImage1();
-               //loadImage2();
-               // loadImage3();
-               // loadImage4();
-              loadImage5();
+                //loadImage1();
+               // loadImage2();
+                //loadImage3();
+                //loadImage4();
+                loadImage5();
             }
         });
     }
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 Bitmap b = loadImageFromNetwork();
                 iv.setImageBitmap(b);
-
+                //直接设置或调用VIEW 类的属性方法都必须在UI 主线程中进行。
             }
         }).start();
     }
@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
                 //final Bitmap bitmap = loadImageFromRawResource(R.raw.image1);
                 iv.post(new Runnable() {
                     public void run() {
+                        //final Bitmap bitmap = loadImageFromNetwork();
+                        //不能在这里写上面这句，因为这里的动作在UI线程上做，上句因为IO操作阻塞了UI线程
                         iv.setImageBitmap(bitmap);
                         iv2.setImageBitmap(bitmap);
                         // iv.setImageResource(R.drawable.image1);
@@ -120,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
                     { //这部分代码将在UI线程执行，实际上是runOnUiThread post Runnable到UI线程执行了
                         @Override
                         public void run() {
+                            //final Bitmap bitmap = loadImageFromNetwork();
+                            //不能在这里写上面这句，因为这里的动作在UI线程上做，上句因为IO操作阻塞了UI线程
                             iv.setImageBitmap(bitmap);
                             iv2.setImageBitmap(bitmap);
 
@@ -185,6 +189,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 //AsyncTask
+//AsyncTask 允许你在用户界面中完成一个异步工作，它在工人线程中执行阻塞操作，然后将要显示的结果发布给UI线程，并且不需要你管理线程。
+//    为此，需要继承AsyncTask类并实现doInBackground()回调函数，将会把阻塞工作在一个后台线程池中执行
+//    为了更新UI，需要实现onPostExecute()，它可以接受doInBackground()的结果而且运行在UI线程中。 这个异步任务可以在UI线程中使用execute()来运行。
+
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         /** The system calls this to perform work in a worker thread and
          * delivers it the parameters given to AsyncTask.execute() */
