@@ -18,8 +18,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-      setContentView(new MyView(this));
+        //TIPS:正常这里是setContentView(R.layout.activity_main);
+        //这么说我删掉activity_main应该没问题
+        setContentView(new MyView(this));
 
 
 
