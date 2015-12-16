@@ -24,7 +24,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="down" />
-
+//TIPS:注意在XML里的写法
+//貌似意味着GameView是在这里构造的
     <com.example.me.customcomponentssample.GameView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
-public class GameView extends View
+public class GameView extends View implements Runnable
 {
 	int  miCount = 0;
 	
@@ -66,7 +66,22 @@ public class GameView extends View
         canvas.drawRect(mX, mY, mX+80, mY+40, mPaint); 
 	}
 
-	
+	public void run()
+	{
+		while (!Thread.currentThread().isInterrupted())
+		{
+			try
+			{
+				Thread.sleep(1000);
+			}
+			catch (InterruptedException e)
+			{
+				Thread.currentThread().interrupt();
+			}
+			//使用postInvalidate可以直接在线程中更新界面
+			this.postInvalidate();
+		}
+	}
 	
 }
 

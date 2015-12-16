@@ -20,12 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         // 开启线程
-        new Thread(new GameThread()).start();
+        //new Thread(new GameThread()).start();
+        new Thread(mGameView).start();
         Button bt1= (Button) findViewById(R.id.bt1);
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mGameView.mY -= 3;
+                mGameView.mY -= 30;
             }
         });
 
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mGameView.mY+=3;
+                mGameView.mY += 30;
             }
         });
     }
