@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:paddingBottom="@dimen/activity_vertical_margin"
+	android:paddingLeft="@dimen/activity_horizontal_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+	tools:context="com.example.administrator.kh4.MainActivity">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Hello World!"
+		android:id="@+id/text"
+		android:layout_marginBottom="69dp"
+		android:layout_alignParentRight="true"
+		android:layout_above="@+id/button1"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="使用View.post"
+		android:id="@+id/button1"
+		android:layout_above="@+id/button2"
+		android:layout_centerHorizontal="true"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="使用runOnUiThread"
+		android:id="@+id/button2"
+		android:layout_above="@+id/button3"
+		android:layout_centerHorizontal="true"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="使用Handler"
+		android:id="@+id/button3"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="44dp"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="在一个Activity 中放置一个textview，一个按钮，按动按钮后， textview 会从屏幕左侧走到右侧并循环滚动（走马灯效果）。再按后停止滚动。请分 别用本例中的3 种线程方法设计。"
+		android:id="@+id/textView"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"/>
+</RelativeLayout>
