@@ -13,5 +13,11 @@
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="Hello World!"/>
+		android:id="@+id/text"
+		android:text="利用旋转画布的方法设计一个会走动的挂钟，该控件获取当前的系统时间（小时：分钟：秒）并不断地刷新显示。\n要求：有时，分，秒三根指针，每隔1 秒刷新一次。"/>
+
+	<com.shu.wolfogre.kt4_3_2.WallClockView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@+id/text"/>
 </RelativeLayout>
