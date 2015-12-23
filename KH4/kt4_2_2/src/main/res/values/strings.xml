@@ -1,3 +1,7 @@
 <resources>
 	<string name="app_name">KT4_2_2</string>
+	<declare-styleable name="ClockView_atts">
+		<attr name="cvFormat" format="integer" />
+		<attr name="cvColor" format="color" />
+	</declare-styleable>
 </resources>

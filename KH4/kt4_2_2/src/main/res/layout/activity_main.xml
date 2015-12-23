@@ -15,9 +15,11 @@
 		android:id="@+id/text"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="Hello World!"/>
+		android:text="创建一个电子表自定义控件，该控件获取当前的系统时间（小时：分钟：秒）并不断地刷新显示。\n要求：为该控件定义属性，并在xml中设置其属性,比如：24小时还是12小时格式或者字体颜色等"/>
 	<com.shu.wolfogre.kt4_2_2.ClockView
 		android:layout_below="@+id/text"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"/>
+		android:layout_height="match_parent"
+		app:cvColor = "#FF0000"
+		app:cvFormat = "12"/>
 </RelativeLayout>
