@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="AppBaseTheme">
+
+
+    </style>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+
+        <!-- customize the color palette -->
+        <item name="colorPrimary"><a href="http://www.jobbole.com/members/color/">@color</a>/material_blue_500</item>
+        <item name="colorPrimaryDark"><a href="http://www.jobbole.com/members/color/">@color</a>/material_blue_700</item>
+        <item name="colorAccent"><a href="http://www.jobbole.com/members/color/">@color</a>/material_green_A200</item>
+
+    </style>
+
+</resources>
