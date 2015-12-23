@@ -62,7 +62,7 @@ public class MyView extends View implements Runnable
             
             mPaint.setColor(Color.RED);
 			/* 绘制矩形 */
-            canvas.drawRect(50, 5, 90, 25, mPaint);
+            canvas.drawRect(50, 5, 900, 250, mPaint);
 			/* 解除画布的锁定 */
             canvas.restore();
 
