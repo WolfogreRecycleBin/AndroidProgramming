@@ -46,7 +46,7 @@ public class WallClockView extends View implements Runnable {
 		paint.setColor(Color.RED);
 		paint.setStrokeWidth(30);
 		canvas.save();
-		canvas.rotate(6 * c.get(Calendar.HOUR), radius, radius);
+		canvas.rotate(360 / 12 * c.get(Calendar.HOUR), radius, radius);
 		canvas.drawLine(radius, radius, radius, textSize + 80, paint);
 		canvas.restore();
 
@@ -54,7 +54,7 @@ public class WallClockView extends View implements Runnable {
 		paint.setColor(Color.GREEN);
 		paint.setStrokeWidth(20);
 		canvas.save();
-		canvas.rotate(6 * c.get(Calendar.MINUTE), radius, radius);
+		canvas.rotate(360 / 60 * c.get(Calendar.MINUTE), radius, radius);
 		canvas.drawLine(radius, radius, radius, textSize + 40, paint);
 		canvas.restore();
 
@@ -62,7 +62,7 @@ public class WallClockView extends View implements Runnable {
 		paint.setColor(Color.BLUE);
 		paint.setStrokeWidth(10);
 		canvas.save();
-		canvas.rotate(6 * c.get(Calendar.SECOND), radius, radius);
+		canvas.rotate(360 / 60 * c.get(Calendar.SECOND), radius, radius);
 		canvas.drawLine(radius, radius, radius, textSize, paint);
 		canvas.restore();
 
