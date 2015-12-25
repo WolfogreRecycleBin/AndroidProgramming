@@ -17,11 +17,11 @@ public class BoardView extends View implements Runnable {
 	final int rowSize = 800;
 	final int colSize = 800;
 	BlockView[][] blocks;
-	Logic logic;
+	SnakeLogic snakeLogic;
 
 	public BoardView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		logic = new Logic(row, col);
+		snakeLogic = new SnakeLogic(row, col);
 		blocks = new BlockView[row][col];
 		for(int i = 0; i < row; ++i)
 			for(int j = 0; j < col; ++j)
@@ -49,7 +49,7 @@ public class BoardView extends View implements Runnable {
 		{
 			try
 			{
-				int [][] mat = logic.toMatrix();
+				int [][] mat = snakeLogic.toMatrix();
 				for(int i = 0; i < row; ++i)
 					for(int j = 0; j < col; ++j)
 					{
