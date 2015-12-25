@@ -11,5 +11,14 @@
 	tools:context="wolfogre.khtd4.MainActivity">
 	<wolfogre.khtd4.BoardView
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"/>
+		android:layout_height="match_parent"
+		android:id="@+id/view"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="重新开始"
+		android:id="@+id/button"
+		android:layout_alignBottom="@+id/view"
+		android:layout_centerHorizontal="true"/>
 </RelativeLayout>

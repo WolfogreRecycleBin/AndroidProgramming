@@ -10,7 +10,7 @@ import java.util.Random;
  * Created by Jason Song(wolfogre@outlook.com) on 12/25/2015.
  */
 public class SnakeLogic {
-	int row;
+	int raw;
 	int col;
 	Point food;
 	List snack;
@@ -18,18 +18,18 @@ public class SnakeLogic {
 	public enum Direction{UP, DOWN, LEFT, RITHT}
 	Direction direction;
 
-	public SnakeLogic(int row, int col){
-		this.row = row;
+	public SnakeLogic(int raw, int col){
+		this.raw = raw;
 		this.col = col;
 		random = new Random();
-		food = new Point(random.nextInt(row), random.nextInt(col));
+		food = new Point(random.nextInt(raw), random.nextInt(col));
 		snack = new ArrayList();
-		snack.add(new Point(row / 2, col / 2));
+		snack.add(new Point(raw / 2, col / 2));
 		direction = Direction.UP;
 	}
 
 	public int[][] toMatrix(){
-		int[][] mat = new int [row][col];
+		int[][] mat = new int [raw][col];
 		mat[food.y][food.x] = 3;
 		for(Object o : snack){
 			Point p = (Point)o;
@@ -38,4 +38,30 @@ public class SnakeLogic {
 		return mat;
 	}
 
+	public boolean move(){
+		switch (direction){
+			case UP:
+				if(((Point)snack.get(0)).y - 1 < 0)
+					return false;
+				snack.add(0,new Point(((Point)snack.get(0)).x, ((Point)snack.get(0)).y - 1));
+				break;
+			case DOWN:
+				if(((Point)snack.get(0)).y + 1 > raw - 1)
+					return false;
+				snack.add(0,new Point(((Point)snack.get(0)).x, ((Point)snack.get(0)).y + 1));
+				break;
+			case LEFT:
+				if(((Point)snack.get(0)).x - 1 < 0)
+					return false;
+				snack.add(0,new Point(((Point)snack.get(0)).x - 1, ((Point)snack.get(0)).y));
+				break;
+			case RITHT:
+				if(((Point)snack.get(0)).x + 1 > col - 1)
+					return false;
+				snack.add(0,new Point(((Point)snack.get(0)).x + 1, ((Point)snack.get(0)).y));
+				break;
+		}
+		snack.remove(snack.size() - 1);
+		return true;
+	}
 }

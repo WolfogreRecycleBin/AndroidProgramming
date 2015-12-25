@@ -18,6 +18,7 @@ public class BoardView extends View implements Runnable {
 	final int colSize = 800;
 	BlockView[][] blocks;
 	SnakeLogic snakeLogic;
+	int [][] mat;
 
 	public BoardView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -27,7 +28,7 @@ public class BoardView extends View implements Runnable {
 			for(int j = 0; j < col; ++j)
 			{
 				blocks[i][j] = new BlockView(context, attrs);
-				blocks[i][j].setShape(i * rowSize / row, j * colSize / col, rowSize / row, colSize / col);
+				blocks[i][j].setShape( j * colSize / col, i * rowSize / row,  colSize / col, rowSize / row);
 			}
 		new Thread(this).start();
 	}
@@ -49,7 +50,8 @@ public class BoardView extends View implements Runnable {
 		{
 			try
 			{
-				int [][] mat = snakeLogic.toMatrix();
+				if(snakeLogic.move())
+					mat = snakeLogic.toMatrix();
 				for(int i = 0; i < row; ++i)
 					for(int j = 0; j < col; ++j)
 					{
@@ -72,5 +74,9 @@ public class BoardView extends View implements Runnable {
 			}
 			this.postInvalidate();
 		}
+	}
+
+	public void restart(){
+		snakeLogic = new SnakeLogic(row, col);
 	}
 }
