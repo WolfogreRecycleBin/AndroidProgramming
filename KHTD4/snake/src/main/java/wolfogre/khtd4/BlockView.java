@@ -20,6 +20,7 @@ public class BlockView extends View {
 	public BlockView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		visible = false;
+		color = Color.WHITE;
 	}
 
 	public void setShape(float x, float y, float width, float height){
@@ -27,7 +28,7 @@ public class BlockView extends View {
 	}
 
 	public void setColor(int r, int g, int b){
-		this.color = Color.rgb(r, g, b);
+		color = Color.rgb(r, g, b);
 	}
 
 	public void setVisible(boolean value){
