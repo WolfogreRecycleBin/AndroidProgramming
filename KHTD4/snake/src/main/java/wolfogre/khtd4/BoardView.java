@@ -69,7 +69,7 @@ public class BoardView extends View implements Runnable {
 							blocks[i][j].setVisible(true);
 						}
 					}
-				Thread.sleep(1000);
+				Thread.sleep(500);
 			}
 			catch (InterruptedException e)
 			{

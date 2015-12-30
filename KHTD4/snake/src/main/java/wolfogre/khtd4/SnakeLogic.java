@@ -60,12 +60,26 @@ public class SnakeLogic {
 		}
 		if(!isLegal(((Point)snack.get(0)).x + dx, ((Point)snack.get(0)).y + dy))
 			return isAlive = false;
-		snack.add(0,new Point(((Point)snack.get(0)).x + dx, ((Point)snack.get(0)).y + dy));
-		snack.remove(snack.size() - 1);
+		snack.add(0, new Point(((Point) snack.get(0)).x + dx, ((Point) snack.get(0)).y + dy));
+		if(food.x == ((Point)snack.get(0)).x && food.y == ((Point)snack.get(0)).y){
+			do{
+				food = new Point(random.nextInt(raw), random.nextInt(col));
+			}while(!isLegal(food.x, food.y));
+		}
+		else
+			snack.remove(snack.size() - 1);
 		return true;
 	}
 
 	public void setDirection(Direction direction){
+		if(this.direction.equals(Direction.DOWN) && direction.equals(Direction.UP))
+			return;
+		if(this.direction.equals(Direction.UP) && direction.equals(Direction.DOWN))
+			return;
+		if(this.direction.equals(Direction.RITHT) && direction.equals(Direction.LEFT))
+			return;
+		if(this.direction.equals(Direction.LEFT) && direction.equals(Direction.RITHT))
+			return;
 		this.direction = direction;
 	}
 
@@ -78,4 +92,5 @@ public class SnakeLogic {
 		}
 		return true;
 	}
+
 }
