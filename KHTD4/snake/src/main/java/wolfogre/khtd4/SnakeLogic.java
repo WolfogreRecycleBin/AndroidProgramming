@@ -17,6 +17,7 @@ public class SnakeLogic {
 	Random random;
 	public enum Direction{UP, DOWN, LEFT, RITHT}
 	Direction direction;
+	boolean isAlive;
 
 	public SnakeLogic(int raw, int col){
 		this.raw = raw;
@@ -26,6 +27,7 @@ public class SnakeLogic {
 		snack = new ArrayList();
 		snack.add(new Point(raw / 2, col / 2));
 		direction = Direction.UP;
+		isAlive = true;
 	}
 
 	public int[][] toMatrix(){
@@ -39,25 +41,27 @@ public class SnakeLogic {
 	}
 
 	public boolean move(){
+		if(!isAlive)
+			return false;
 		switch (direction){
 			case UP:
 				if(((Point)snack.get(0)).y - 1 < 0)
-					return false;
+					return isAlive = false;
 				snack.add(0,new Point(((Point)snack.get(0)).x, ((Point)snack.get(0)).y - 1));
 				break;
 			case DOWN:
 				if(((Point)snack.get(0)).y + 1 > raw - 1)
-					return false;
+					return isAlive = false;
 				snack.add(0,new Point(((Point)snack.get(0)).x, ((Point)snack.get(0)).y + 1));
 				break;
 			case LEFT:
 				if(((Point)snack.get(0)).x - 1 < 0)
-					return false;
+					return isAlive = false;
 				snack.add(0,new Point(((Point)snack.get(0)).x - 1, ((Point)snack.get(0)).y));
 				break;
 			case RITHT:
 				if(((Point)snack.get(0)).x + 1 > col - 1)
-					return false;
+					return isAlive = false;
 				snack.add(0,new Point(((Point)snack.get(0)).x + 1, ((Point)snack.get(0)).y));
 				break;
 		}

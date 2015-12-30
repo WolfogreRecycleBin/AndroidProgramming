@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Toast;
 
 
 /**
@@ -52,6 +53,8 @@ public class BoardView extends View implements Runnable {
 			{
 				if(snakeLogic.move())
 					mat = snakeLogic.toMatrix();
+				else
+					break;
 				for(int i = 0; i < row; ++i)
 					for(int j = 0; j < col; ++j)
 					{
@@ -74,10 +77,20 @@ public class BoardView extends View implements Runnable {
 			}
 			this.postInvalidate();
 		}
+		final Context context = this.getContext();
+		this.post(new Runnable() {
+			@Override
+			public void run() {
+				Toast.makeText(context, "Game Over!", Toast.LENGTH_LONG).show();
+			}
+		});
 	}
 
 	public void restart(){
+		if(snakeLogic.isAlive)
+			return;
 		snakeLogic = new SnakeLogic(row, col);
+		new Thread(this).start();
 	}
 
 	public void changeDirection(float velocityX, float velocityY){

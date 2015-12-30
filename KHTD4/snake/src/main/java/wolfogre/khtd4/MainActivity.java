@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 			@Override
 			public void onClick(View v) {
 				((BoardView) findViewById(R.id.view)).restart();
-				Toast.makeText(MainActivity.this, "restart", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MainActivity.this, "Restart!", Toast.LENGTH_SHORT).show();
 			}
 		});
 
