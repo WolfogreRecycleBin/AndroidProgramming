@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SharedPreferenceSample</string>
+    <string-array name="pref_provider_entrys">
+        <item>中国移动</item>
+        <item>中国联通</item>
+        <item>中国电信</item>
+    </string-array>
+
+    <string-array name="pref_provider_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="pref_sync"
+        android:title="title"
+        android:summary="summary"
+        android:defaultValue="true" />
+    <ListPreference
+        android:dependency="pref_sync"
+        android:key="pref_syncConnectionType"
+        android:title="connecttype"
+        android:dialogTitle="pref_syncConnectionType"
+        android:entries="@array/pref_provider_entrys"
+        android:entryValues="@array/pref_provider_values"
+        android:defaultValue="1" />
+    <PreferenceScreen 
+ android:key="button_voicemail_category_key"
+        android:title="voicemail"
+        android:persistent="false">
+    <CheckBoxPreference
+        android:key="pref_sync"
+        android:title="title"
+        android:summary="summary" 
+        android:defaultValue="true" />
+    <ListPreference
+        android:dependency="pref_sync"
+        android:key="pref_syncConnectionType"
+        android:title="connecttype"
+        android:dialogTitle="pref_syncConnectionType"
+      android:entries="@array/pref_provider_entrys"
+        android:entryValues="@array/pref_provider_values"
+        android:defaultValue="1" />
+     </PreferenceScreen>
+     
+    <PreferenceCategory 
+        android:title="pref_sms_storage_title"
+        android:key="pref_key_storage_settings">
+        <CheckBoxPreference
+            android:key="pref_key_auto_delete"
+            android:summary="pref_summary_auto_delete"
+            android:title="pref_title_auto_delete"
+            android:defaultValue="false" />
+        <Preference 
+            android:key="pref_key_sms_delete_limit"
+            android:dependency="pref_key_auto_delete"
+            android:summary="pref_summary_delete_limit"
+            android:title="pref_title_sms_delete" />
+        <Preference 
+            android:key="pref_key_mms_delete_limit"
+            android:dependency="pref_key_auto_delete"
+            android:summary="pref_summary_delete_limit"
+            android:title="pref_title_mms_delete"  />
+    </PreferenceCategory>
+    
+</PreferenceScreen>

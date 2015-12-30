@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ContentProviderSample/ContentProviderSample.iml" filepath="$PROJECT_DIR$/ContentProviderSample/ContentProviderSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CursorLoaderSample/CursorLoaderSample.iml" filepath="$PROJECT_DIR$/CursorLoaderSample/CursorLoaderSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataStorage.iml" filepath="$PROJECT_DIR$/DataStorage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FileIOSample/FileIOSample.iml" filepath="$PROJECT_DIR$/FileIOSample/FileIOSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GridViewSample/GridViewSample.iml" filepath="$PROJECT_DIR$/GridViewSample/GridViewSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ListViewSample/ListViewSample.iml" filepath="$PROJECT_DIR$/ListViewSample/ListViewSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SQLiteSample/SQLiteSample.iml" filepath="$PROJECT_DIR$/SQLiteSample/SQLiteSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SharedPreferenceSample/SharedPreferenceSample.iml" filepath="$PROJECT_DIR$/SharedPreferenceSample/SharedPreferenceSample.iml" />
+    </modules>
+  </component>
+</project>

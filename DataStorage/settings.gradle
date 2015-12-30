@@ -1,0 +1,1 @@
+include ':CursorLoaderSample', ':SQLiteSample', ':ListViewSample', ':FileIOSample', ':SharedPreferenceSample', ':ContentProviderSample', ':GridViewSample'

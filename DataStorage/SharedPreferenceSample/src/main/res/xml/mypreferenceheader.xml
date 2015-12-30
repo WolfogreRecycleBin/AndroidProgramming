@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android"
+   >    
+    
+    <header 
+        android:fragment="com.example.me.sharedpreferencesample.SettingFragment"
+        android:title="header_wifi"
+        android:summary="off"/>
+    <header 
+        android:fragment="com.example.me.sharedpreferencesample.SettingFragment"
+        android:title="header_bluetooth"
+        android:summary="cate_network">
+        <!-- key/value pairs can be included as arguments for the fragment. -->
+        <extra android:name="someKey" android:value="someHeaderValue" />
+    </header> 
+ 
+    <header 
+        android:fragment="com.example.me.sharedpreferencesample.SettingFragment"
+        android:title="header_3g"
+        android:summary="cate_network">
+        <!-- key/value pairs can be included as arguments for the fragment. -->
+        <extra android:name="someKey" android:value="someHeaderValue" />
+    </header>    
+    
+    <header 
+        android:fragment="com.example.me.sharedpreferencesample.SettingFragment"
+        android:title="header_sound"
+      />
+    <header 
+        android:fragment="com.example.me.sharedpreferencesample.SettingFragment"
+        android:title="header_call">        >
+        <!-- key/value pairs can be included as arguments for the fragment. -->
+        <extra android:name="someKey" android:value="someHeaderValue" />
+    </header>
+    <header 
+       android:fragment="com.example.me.sharedpreferencesample.SettingFragment"
+        android:title="header_display">
+        <!-- key/value pairs can be included as arguments for the fragment. -->
+        <extra android:name="someKey" android:value="someHeaderValue" />
+    </header>   
+  
+</preference-headers>
