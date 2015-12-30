@@ -43,33 +43,39 @@ public class SnakeLogic {
 	public boolean move(){
 		if(!isAlive)
 			return false;
+		int dx = 0, dy = 0;
 		switch (direction){
 			case UP:
-				if(((Point)snack.get(0)).y - 1 < 0)
-					return isAlive = false;
-				snack.add(0,new Point(((Point)snack.get(0)).x, ((Point)snack.get(0)).y - 1));
+				dy = -1;
 				break;
 			case DOWN:
-				if(((Point)snack.get(0)).y + 1 > raw - 1)
-					return isAlive = false;
-				snack.add(0,new Point(((Point)snack.get(0)).x, ((Point)snack.get(0)).y + 1));
+				dy = 1;
 				break;
 			case LEFT:
-				if(((Point)snack.get(0)).x - 1 < 0)
-					return isAlive = false;
-				snack.add(0,new Point(((Point)snack.get(0)).x - 1, ((Point)snack.get(0)).y));
+				dx = -1;
 				break;
 			case RITHT:
-				if(((Point)snack.get(0)).x + 1 > col - 1)
-					return isAlive = false;
-				snack.add(0,new Point(((Point)snack.get(0)).x + 1, ((Point)snack.get(0)).y));
+				dx = 1;
 				break;
 		}
+		if(!isLegal(((Point)snack.get(0)).x + dx, ((Point)snack.get(0)).y + dy))
+			return isAlive = false;
+		snack.add(0,new Point(((Point)snack.get(0)).x + dx, ((Point)snack.get(0)).y + dy));
 		snack.remove(snack.size() - 1);
 		return true;
 	}
 
 	public void setDirection(Direction direction){
 		this.direction = direction;
+	}
+
+	boolean isLegal(int x, int y){
+		if(x > col - 1 || x < 0 || y > raw - 1 || y < 0)
+			return false;
+		for(int i = 0; i < snack.size(); ++i){
+			if(((Point)snack.get(i)).x == x && ((Point)snack.get(i)).y == y)
+				return false;
+		}
+		return true;
 	}
 }
