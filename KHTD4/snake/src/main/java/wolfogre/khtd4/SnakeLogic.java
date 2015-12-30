@@ -64,4 +64,8 @@ public class SnakeLogic {
 		snack.remove(snack.size() - 1);
 		return true;
 	}
+
+	public void setDirection(Direction direction){
+		this.direction = direction;
+	}
 }

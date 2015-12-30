@@ -79,4 +79,18 @@ public class BoardView extends View implements Runnable {
 	public void restart(){
 		snakeLogic = new SnakeLogic(row, col);
 	}
+
+	public void changeDirection(float velocityX, float velocityY){
+		if(Math.abs(velocityX) > Math.abs(velocityY)){
+			if(velocityX > 0)
+				snakeLogic.setDirection(SnakeLogic.Direction.RITHT);
+			else
+				snakeLogic.setDirection(SnakeLogic.Direction.LEFT);
+		}else {
+			if(velocityY > 0)
+				snakeLogic.setDirection(SnakeLogic.Direction.DOWN);
+			else
+				snakeLogic.setDirection(SnakeLogic.Direction.UP);
+		}
+	}
 }

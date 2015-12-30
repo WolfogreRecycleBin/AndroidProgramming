@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
 			@Override
 			public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-				Toast.makeText(MainActivity.this, "onFling " + velocityX + " " + velocityY, Toast.LENGTH_LONG).show();
+				((BoardView) findViewById(R.id.view)).changeDirection(velocityX, velocityY);
 				return false;
 			}
 		});
