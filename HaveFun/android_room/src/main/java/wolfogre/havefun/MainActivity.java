@@ -9,5 +9,8 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		AndroidRoom androidRoom = new AndroidRoom("Android Room", 123, this);
+		androidRoom.openDoor("Zou Guobing");
+		androidRoom.closeDoor("Lei Feng");
 	}
 }
