@@ -1,0 +1,4 @@
+<resources>
+	<string name="app_name">KH7_1</string>
+	<string name="question">通常通过startService 启动Service 意味着启动者无需也无法同service通信，但我们可以通过receiver让activity和service进行交互，请设计这个程序，activity通过startService 启动一个service，然后发送广播向service 请求数据（比如一个随机数）， service 收到请求后也发送广播给activity 回传数据。功能和界面可自行定义。</string>
+</resources>
