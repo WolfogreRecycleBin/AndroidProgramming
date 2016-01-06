@@ -19,6 +19,7 @@ Boolean mBound=false;
 
     public void bt1Click(View view){
         Intent it=new Intent(MyService.ACTION);
+        //TIP:隐式启动时，应该设置包名
         it.setPackage("com.example.me.servicebasesample");
        // Intent it=new Intent(this,MyService.class);
         startService(it);
