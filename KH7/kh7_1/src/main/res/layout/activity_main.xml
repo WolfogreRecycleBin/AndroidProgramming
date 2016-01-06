@@ -13,5 +13,32 @@
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="@string/question"/>
+		android:text="@string/question"
+		android:id="@+id/textView"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="启动服务"
+		android:id="@+id/button"
+		android:layout_below="@+id/textView"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="19dp"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="终止服务"
+		android:id="@+id/button2"
+		android:layout_below="@+id/button"
+		android:layout_centerHorizontal="true"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="向服务请求数据"
+		android:id="@+id/button3"
+		android:layout_below="@+id/button2"
+		android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
