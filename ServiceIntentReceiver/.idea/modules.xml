@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NotificationSample/NotificationSample.iml" filepath="$PROJECT_DIR$/NotificationSample/NotificationSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReceiverSample/ReceiverSample.iml" filepath="$PROJECT_DIR$/ReceiverSample/ReceiverSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServiceBaseSample/ServiceBaseSample.iml" filepath="$PROJECT_DIR$/ServiceBaseSample/ServiceBaseSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServiceIntentReceiver.iml" filepath="$PROJECT_DIR$/ServiceIntentReceiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServiceRemoteClientSample/ServiceRemoteClientSample.iml" filepath="$PROJECT_DIR$/ServiceRemoteClientSample/ServiceRemoteClientSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServiceRemoteSample/ServiceRemoteSample.iml" filepath="$PROJECT_DIR$/ServiceRemoteSample/ServiceRemoteSample.iml" />
+    </modules>
+  </component>
+</project>
