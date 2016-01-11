@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HaveFun.iml" filepath="$PROJECT_DIR$/HaveFun.iml" />
       <module fileurl="file://$PROJECT_DIR$/android_room/android_room.iml" filepath="$PROJECT_DIR$/android_room/android_room.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sockettcp/sockettcp.iml" filepath="$PROJECT_DIR$/sockettcp/sockettcp.iml" />
     </modules>
   </component>
 </project>
