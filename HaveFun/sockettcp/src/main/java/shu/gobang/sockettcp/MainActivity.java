@@ -6,25 +6,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.net.InetAddress;
-import java.net.Socket;
 import java.net.UnknownHostException;
 
-import SocketTCP.Client;
+import SocketTcpClient.AndroidClient;
 
 public class MainActivity extends AppCompatActivity {
 
-	Client client;
+	AndroidClient androidClient;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		try {
-			//client = new Client( InetAddress.getByName("120.27.99.15"),6789);
-			//TODO:dame it.
+			androidClient = new AndroidClient( InetAddress.getByName("115.28.191.67"), 6789, this);
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
@@ -36,17 +35,27 @@ public class MainActivity extends AppCompatActivity {
 					@Override
 					public void run() {
 						try {
-							client.connect();
-						} catch (IOException e) {
-							printOnView("连接失败");
+							androidClient.connect();
+						} catch (final IOException e) {
+							btnConnect.post(new Runnable() {
+								@Override
+								public void run() {
+									Toast.makeText(getApplicationContext(), "连接失败:" + e.getMessage(), Toast.LENGTH_LONG).show();
+								}
+							});
 							return;
 						}
-						printOnView("连接成功");
+						btnConnect.post(new Runnable() {
+							@Override
+							public void run() {
+								Toast.makeText(getApplicationContext(), "连接成功", Toast.LENGTH_LONG).show();
+							}
+						});
 					}
 				}).start();
 			}
 		});
-		final Button btnSend = (Button)findViewById(R.id.button);
+		final Button btnSend = (Button)findViewById(R.id.button2);
 		final EditText etSend = (EditText)findViewById(R.id.editText);
 		btnSend.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -55,24 +64,17 @@ public class MainActivity extends AppCompatActivity {
 					@Override
 					public void run() {
 						try {
-							client.send();
-						} catch (IOException e) {
-							printOnView("连接失败");
-							return;
+							androidClient.send(etSend.getText().toString());
+						} catch (final IOException e) {
+							btnConnect.post(new Runnable() {
+								@Override
+								public void run() {
+									Toast.makeText(getApplicationContext(), "发送失败:" + e.getMessage(), Toast.LENGTH_LONG).show();
+								}
+							});
 						}
-						printOnView("连接成功");
 					}
 				}).start();
-			}
-		});
-	}
-
-	void printOnView(final String message){
-		final TextView txt = (TextView)findViewById(R.id.textView2);
-		txt.post(new Runnable() {
-			@Override
-			public void run() {
-				txt.setText(message + "\n" + txt.getText());
 			}
 		});
 	}
