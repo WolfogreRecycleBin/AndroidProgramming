@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/INTERNET.iml" filepath="$PROJECT_DIR$/INTERNET.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JSONParseSample/JSONParseSample.iml" filepath="$PROJECT_DIR$/JSONParseSample/JSONParseSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NetworkManagerSample/NetworkManagerSample.iml" filepath="$PROJECT_DIR$/NetworkManagerSample/NetworkManagerSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebSample/WebSample.iml" filepath="$PROJECT_DIR$/WebSample/WebSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebViewHtml5Sample/WebViewHtml5Sample.iml" filepath="$PROJECT_DIR$/WebViewHtml5Sample/WebViewHtml5Sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/networkUsage/networkUsage.iml" filepath="$PROJECT_DIR$/networkUsage/networkUsage.iml" />
+    </modules>
+  </component>
+</project>
