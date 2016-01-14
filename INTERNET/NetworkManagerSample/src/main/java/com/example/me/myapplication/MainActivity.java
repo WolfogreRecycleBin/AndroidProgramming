@@ -15,14 +15,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ConnectivityManager connMgr = (ConnectivityManager)
-                getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        boolean isWifiConn = networkInfo.isConnected();
-        networkInfo = connMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-        boolean isMobileConn = networkInfo.isConnected();
-        Log.d(DEBUG_TAG, "Wifi connected: " + isWifiConn);
-        Log.d(DEBUG_TAG, "Mobile connected: " + isMobileConn);
     }
 
     public void onButtonClick(View view){
@@ -33,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public boolean isOnline() {
+        /*
+        TIPS:
+        主要用到两个类
+        ConnectivityManager: Answers queries about the state of network connectivity. It also notifies applications when network connectivity changes.
+        NetworkInfo: Describes the status of a network interface of a given type (currently eitherMobile or Wi-Fi).
+         */
         ConnectivityManager connMgr = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
