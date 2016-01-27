@@ -23,7 +23,9 @@ public class QuickSort {
         //将大于point的元素移到右边区域
         int index=p;
         for (int i = index; i < r+1; ++i) {
-            if (a[i]-point <= 0) {
+            //if (a[i]-point <= 0) {
+            //This is the BUG!
+            if (a[i] < point) {
                 swap(a, index++, i);
             }
         }
