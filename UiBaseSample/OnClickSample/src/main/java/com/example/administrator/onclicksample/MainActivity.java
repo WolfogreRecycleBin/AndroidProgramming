@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     TextView mTv;
     Button mBtn1,mBtn2,mBtn3;
 
@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 mTv.setText("button1 clicked");
             }
         });
+
+        mBtn2.setOnClickListener(this);
     }
 
 
@@ -36,5 +38,11 @@ public class MainActivity extends AppCompatActivity {
     public void bt3OnClick(View v){
         ShowToast("button3 be clicked");
         mTv.setText("button3 clicked");
+    }
+
+    @Override
+    public void onClick(View v) {
+        ShowToast("button2 be clicked");
+        mTv.setText("button2 clicked");
     }
 }
