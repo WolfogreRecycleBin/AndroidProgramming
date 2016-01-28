@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KH2.iml" filepath="$PROJECT_DIR$/KH2.iml" />
       <module fileurl="file://$PROJECT_DIR$/kh2_1_calculator/kh2_1_calculator.iml" filepath="$PROJECT_DIR$/kh2_1_calculator/kh2_1_calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kh2_1_signupui/kh2_1_signupui.iml" filepath="$PROJECT_DIR$/kh2_1_signupui/kh2_1_signupui.iml" />
     </modules>
   </component>
 </project>

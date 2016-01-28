@@ -1,0 +1,4 @@
+<resources>
+	<string name="app_name">KH2_1_SignUpUI</string>
+	<string name="app_description">请再设计一个用户注册UI，可参考手机通信录中添加联系人的界面。</string>
+</resources>

@@ -1,1 +1,1 @@
-include ':kh2_1_calculator'
+include ':kh2_1_calculator', ':kh2_1_signupui'

@@ -11,6 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/kh2_1_calculator" />
+            <option value="$PROJECT_DIR$/kh2_1_signupui" />
           </set>
         </option>
       </GradleProjectSettings>

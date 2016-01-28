@@ -1,3 +1,4 @@
 <resources>
 	<string name="app_name">KH2_1_Calculator</string>
+	<string name="app_description">请参考手机中最常见的计算器，模仿设计一个，必须符合最通常的计算器UI 设计，除了基本界面UI外，应实现基本的四则运算功能。</string>
 </resources>
