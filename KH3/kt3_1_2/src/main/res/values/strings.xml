@@ -1,0 +1,4 @@
+<resources>
+	<string name="app_name">KT3_1_2</string>
+	<string name="app_description">实现如下功能：在自己编写的activity 中传递一个URL，然后隐式启动一个activity 来浏览该网址。</string>
+</resources>
