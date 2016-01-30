@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 private EditText mEdt1,mEdt2;
     @Override
@@ -33,15 +35,23 @@ private EditText mEdt1,mEdt2;
     }
 //利用Bundle封装数据后再利用Intent Extras进行传递
     public void bt2Click(View v){
-
+	    Bundle bundle = new Bundle();
+	    bundle.putString("name", mEdt1.getText().toString());
+		bundle.putInt("age", Integer.valueOf(mEdt2.getText().toString()));
+	    bundle.putBoolean("pass", true);
+	    Intent intent=new Intent();
+	    intent.setClass(this, SecondActivity2.class);
+	    intent.putExtra("info", bundle);
+	    startActivity(intent);
     }
 //利用Application全局变量传递数据
     public void bt3Click(View v){
-        Intent intent=new Intent();
-        intent.setClass(this, SecondActivity.class);
+	    MyApplication ma=(MyApplication)getApplication();
+	    ma.setName(mEdt1.getText().toString());
+	    ma.setAge(Integer.valueOf(mEdt2.getText().toString()));
+	    ma.setPass(true);
 
-         MyApplication ma=(MyApplication)getApplication();
-        intent.putExtra("name", ma.getName());  //putExtra(String,String)
+	    startActivity(new Intent(this, SecondActivity3.class));
     }
 
 

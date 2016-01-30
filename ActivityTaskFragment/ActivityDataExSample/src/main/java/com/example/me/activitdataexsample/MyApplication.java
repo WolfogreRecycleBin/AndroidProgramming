@@ -16,4 +16,20 @@ public class MyApplication extends Application {
     public void setName(String name){
         this.name=name;
     }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public boolean isPass() {
+        return pass;
+    }
+
+    public void setPass(boolean pass) {
+        this.pass = pass;
+    }
 }
