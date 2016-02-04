@@ -1,0 +1,4 @@
+<resources>
+	<string name="app_name">KT3_5_1</string>
+	<string name="app_description">设计一个Activity，嵌入两个fragment，其中一个的布局中包含有一个TextView。另一个的布局中含有一个EditText和一个Button。它们上下均等地排列在Activity的主布局中。当点击按钮时，将EditText中输入的文字显示在上方Fragment的TextView中。</string>
+</resources>
