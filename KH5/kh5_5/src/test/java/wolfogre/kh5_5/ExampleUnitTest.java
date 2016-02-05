@@ -1,4 +1,4 @@
-package wolfogre.kh5;
+package wolfogre.kh5_5;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package wolfogre.kh5;
+package wolfogre.kh5_5;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
