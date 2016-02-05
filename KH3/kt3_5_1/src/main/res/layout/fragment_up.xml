@@ -2,7 +2,8 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="wolfogre.kt3_5_1.UpFragment">
+             tools:context="wolfogre.kt3_5_1.UpFragment"
+             android:background="@color/upFragmentBackground">
 
 	<TextView
 		android:layout_width="match_parent"
