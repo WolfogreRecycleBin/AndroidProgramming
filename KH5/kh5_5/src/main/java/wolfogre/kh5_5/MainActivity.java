@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 	DrawerLayout mDrawerLayout;
 	ListView mDrawerList;
 	String[] mPlanetTitles;
+	Fragment[] mFragments;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 		mDrawerList = (ListView) findViewById(R.id.left_drawer);
 		mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, mPlanetTitles));
 		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+		mFragments = new Fragment[mPlanetTitles.length];
 	}
 
 	private class DrawerItemClickListener implements ListView.OnItemClickListener {
@@ -34,15 +36,17 @@ public class MainActivity extends AppCompatActivity {
 
 		private void selectItem(int position) {
 			// Create a new fragment and specify the planet to show based on position
-			Fragment fragment = new ImageFragment();
-			Bundle args = new Bundle();
-			args.putString("dog_name", mPlanetTitles[position]);
-			fragment.setArguments(args);
+			if(mFragments[position] == null){
+				mFragments[position] = new ImageFragment();
+				Bundle args = new Bundle();
+				args.putString("dog_name", mPlanetTitles[position]);
+				mFragments[position].setArguments(args);
+			}
 
 			// Insert the fragment by replacing any existing fragment
 			FragmentManager fragmentManager = getSupportFragmentManager();
 			fragmentManager.beginTransaction()
-					.replace(R.id.content_frame, fragment)
+					.replace(R.id.content_frame, mFragments[position])
 					.commit();
 
 			// Highlight the selected item, update the title, and close the drawer
