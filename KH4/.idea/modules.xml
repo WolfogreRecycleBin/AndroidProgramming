@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KH4.iml" filepath="$PROJECT_DIR$/KH4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/KH4_1_2/KH4_1_2.iml" filepath="$PROJECT_DIR$/KH4_1_2/KH4_1_2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/kh4_1_3/kh4_1_3.iml" filepath="$PROJECT_DIR$/kh4_1_3/kh4_1_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kt4_1_2/kt4_1_2.iml" filepath="$PROJECT_DIR$/kt4_1_2/kt4_1_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kt4_1_3/kt4_1_3.iml" filepath="$PROJECT_DIR$/kt4_1_3/kt4_1_3.iml" />
       <module fileurl="file://$PROJECT_DIR$/kt4_2_2/kt4_2_2.iml" filepath="$PROJECT_DIR$/kt4_2_2/kt4_2_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/kt4_3_2/kt4_3_2.iml" filepath="$PROJECT_DIR$/kt4_3_2/kt4_3_2.iml" />
     </modules>
