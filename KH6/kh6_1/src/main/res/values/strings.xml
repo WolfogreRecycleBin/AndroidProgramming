@@ -1,9 +1,12 @@
 <resources>
 	<string name="app_name">KH6_1</string>
 	<string name="app_description">
-		参照有关listview和文件读写例子，编写一个小型的file explore。
-		可以根据给定的路径，用listview 列出其下的文件，单击add 按钮增加一个文件，选择文件可以删除或读取文件。
-		请尝试为Listview 定制一个layout。
+		参照有关ListView和文件读写例子，编写一个小型的File Explore。
+		可以根据给定的路径，用ListView 列出其下的文件，单击add 按钮增加一个文件，选择文件可以删除或读取文件。
+		请尝试为ListView 定制一个layout。
+	</string>
+	<string name="app_tip">
+		操作提示：点击打开，长按删除，圆钮新建
 	</string>
 	<string name="action_settings">Settings</string>
 

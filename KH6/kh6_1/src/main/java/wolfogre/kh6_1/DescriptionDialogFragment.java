@@ -15,13 +15,15 @@ public class DescriptionDialogFragment extends DialogFragment {
 		super.onCreateDialog(savedInstanceState);
 		// Use the Builder class for convenient dialog construction
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-		builder.setMessage(R.string.app_description)
+
+		builder.setMessage(getString(R.string.app_description) + "\n\n" +getString(R.string.app_tip))
 				.setNegativeButton("确认", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						dialog.cancel();
 					}
-				});
+				})
+				.setTitle("KH6_1");
 		// Create the AlertDialog object and return it
 		return builder.create();
 	}

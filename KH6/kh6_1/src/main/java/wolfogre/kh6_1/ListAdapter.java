@@ -53,7 +53,6 @@ public class ListAdapter extends BaseAdapter {
 			convertView = inflater.inflate(R.layout.list_item, null);
 			holder.imageView = (ImageView) convertView.findViewById(R.id.imageView);
 			holder.textView = (TextView) convertView.findViewById(R.id.textView);
-			holder.button = (Button) convertView.findViewById(R.id.button);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
