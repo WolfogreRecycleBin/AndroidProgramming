@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 		mPlanetTitles = DogInfo.getDogNames();
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.left_drawer);
-		mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, mPlanetTitles));
+		mDrawerList.setAdapter(new ArrayAdapter<>(this, R.layout.drawer_list_item, mPlanetTitles));
 		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 		mFragments = new Fragment[mPlanetTitles.length];
 	}
@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 		}
 
 		private void selectItem(int position) {
-			// Create a new fragment and specify the planet to show based on position
 			if(mFragments[position] == null){
 				mFragments[position] = new ImageFragment();
 				Bundle args = new Bundle();
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 				mFragments[position].setArguments(args);
 			}
 
-			// Insert the fragment by replacing any existing fragment
 			FragmentManager fragmentManager = getSupportFragmentManager();
 			fragmentManager.beginTransaction()
 					.replace(R.id.content_frame, mFragments[position])
