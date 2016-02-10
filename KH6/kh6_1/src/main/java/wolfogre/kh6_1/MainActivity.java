@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				//TODO
+				Intent intent = new Intent(MainActivity.this,NewFileActivity.class);
+				intent.putExtra("file_path", path.getAbsolutePath());
+				startActivity(intent);
 			}
 		});
 
@@ -75,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
 		}
 		return super.onKeyUp(keyCode, event);
 	}
+	private void update(){
+		update(path);
+	}
+
 
 	private void update(File newPath){
 		path = newPath;

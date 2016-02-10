@@ -23,6 +23,8 @@
 		</activity>
 		<activity android:name=".ReadFileActivity">
 		</activity>
+		<activity android:name=".NewFileActivity">
+		</activity>
 	</application>
 
 </manifest>
