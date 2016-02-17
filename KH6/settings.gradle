@@ -1,1 +1,1 @@
-include ':kh6_1'
+include ':kh6_1', ':kh6_2'
