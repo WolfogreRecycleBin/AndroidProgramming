@@ -6,4 +6,10 @@
 		比分。这些比赛数据的存储采用xml 或者文件或者数据库的方式均可。设置中可以预置默认
 		的比分，和小组人数，设置信息使用sharepreferenced 来保存。
 	</string>
+
+	<string name="name_games">games</string>
+	<string name="key_game_name">game_name</string>
+	<string name="name_group_number">group_number</string>
+
+
 </resources>
