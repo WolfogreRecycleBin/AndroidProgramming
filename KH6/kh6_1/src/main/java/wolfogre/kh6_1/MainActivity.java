@@ -62,11 +62,28 @@ public class MainActivity extends AppCompatActivity {
 		listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-				Toast.makeText(context, "长长长长按了" + position, Toast.LENGTH_LONG).show();
+				//Toast.makeText(context, "长长长长按了" + position, Toast.LENGTH_LONG).show();
+				try{
+					File fileToDelete = files[position];
+					if(fileToDelete.delete()){
+						Toast.makeText(context, "删除" + fileToDelete.getName() + "成功", Toast.LENGTH_LONG).show();
+					} else {
+						Toast.makeText(context, "删除" + fileToDelete.getName() + "失败", Toast.LENGTH_LONG).show();
+					}
+				}catch (Exception ex){
+					Toast.makeText(context, ex.getMessage(), Toast.LENGTH_LONG).show();
+				}
+				update();
 				return true;
 			}
 		});
 		new DescriptionDialogFragment().show(getFragmentManager(), "");
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		update();
 	}
 
 	@Override
@@ -77,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
 		}
 		return super.onKeyUp(keyCode, event);
 	}
+
 	private void update(){
 		update(path);
 	}

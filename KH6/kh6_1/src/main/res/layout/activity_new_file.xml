@@ -10,38 +10,53 @@
 	android:paddingTop="@dimen/activity_vertical_margin"
 	tools:context="wolfogre.kh6_1.NewFileActivity">
 
-	<EditText
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/editText"
-		android:layout_alignParentTop="true"
-		android:layout_alignParentRight="true"
-		android:layout_alignParentEnd="true"
-		/>
 
 	<GridLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:layout_alignTop="@+id/editText"
-		android:layout_alignParentLeft="true"
-		android:layout_alignParentStart="true">
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true">
 
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="New Text"
-			android:id="@+id/textView2"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:text="名称  "
 			android:layout_row="0"
-			android:layout_column="0"
-			android:textSize="20dp"/>
+			android:layout_column="0"/>
 
 		<EditText
-			android:layout_width="match_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:id="@+id/editText2"
+			android:id="@+id/etName"
+			android:ems="9"
 			android:layout_row="0"
 			android:layout_column="1"/>
 
-	</GridLayout>
+		<CheckBox
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="文件夹"
+			android:id="@+id/cbIsFolder"
+			android:layout_row="0"
+			android:layout_column="2"/>
 
+		<EditText
+			android:layout_width="match_parent"
+			android:layout_height="256dp"
+			android:id="@+id/etContent"
+			android:layout_row="1"
+			android:layout_columnSpan="3"
+			android:layout_rowSpan="6"
+			android:layout_column="0"/>
+
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:text="确认"
+			android:id="@+id/btnCommit"
+			android:layout_row="7"
+			android:layout_column="1"/>
+	</GridLayout>
 </RelativeLayout>
