@@ -98,6 +98,15 @@ public class GroupListViewAdapter extends BaseAdapter {
 			AbsListView.LayoutParams lp = new AbsListView.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, 150);
 			finalConvertView.setLayoutParams(lp);
 		}
+
+		viewHolder.ibAddPeople.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//TODO
+
+			}
+		});
+
 		return convertView;
 	}
 
