@@ -21,6 +21,7 @@ public class GameManagerActivity extends AppCompatActivity {
 		setTitle("全部比赛");
 		final EditText etGameName = (EditText)findViewById(R.id.etGameName);
 		final EditText etGameTime = (EditText)findViewById(R.id.etGameTime);
+
 		findViewById(R.id.btnNewGame).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -35,11 +36,23 @@ public class GameManagerActivity extends AppCompatActivity {
 				updateGameList();
 			}
 		});
+
 		((ListView)findViewById(R.id.lvGames)).setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(GameManagerActivity.this, GameSettingActivity.class);
+				intent.putExtra(getString(R.string.key_game_name), (String) ((ListView) parent).getAdapter().getItem(position));
 				startActivity(intent);
+			}
+		});
+
+		((ListView)findViewById(R.id.lvGames)).setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+				Intent intent = new Intent(GameManagerActivity.this, GroupSettingActivity.class);
+				intent.putExtra(getString(R.string.key_game_name), (String) ((ListView) parent).getAdapter().getItem(position));
+				startActivity(intent);
+				return true;
 			}
 		});
 		updateGameList();

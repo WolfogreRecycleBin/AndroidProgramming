@@ -10,6 +10,8 @@
 	<string name="name_games">games</string>
 	<string name="key_game_name">game_name</string>
 	<string name="name_group_number">group_number</string>
+	<string name="name_group_people_number">group_people_number</string>
+	<string name="name_groups">groups</string>
 
 
 </resources>

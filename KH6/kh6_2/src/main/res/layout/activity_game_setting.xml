@@ -16,7 +16,8 @@
 		android:layout_height="match_parent"
 		android:layout_alignParentTop="true"
 		android:layout_alignParentLeft="true"
-		android:layout_alignParentStart="true">
+		android:layout_alignParentStart="true"
+		android:id="@+id/linearLayout">
 
 		<TextView
 			android:layout_width="wrap_content"
@@ -24,7 +25,7 @@
 			android:layout_weight="1"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:text="Large Text"
-			android:id="@+id/textView5"/>
+			android:id="@+id/tvGameName"/>
 
 		<LinearLayout
 			android:orientation="horizontal"
@@ -42,14 +43,14 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:textAppearance="?android:attr/textAppearanceMedium"
-					android:text="Medium Text"
+					android:text="小组数"
 					android:id="@+id/textView6"
 					android:layout_gravity="center_horizontal"/>
 
 				<NumberPicker
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:id="@+id/numberPicker"
+					android:id="@+id/npGroupNumber"
 					android:layout_gravity="center_horizontal"/>
 			</LinearLayout>
 
@@ -63,16 +64,24 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:textAppearance="?android:attr/textAppearanceMedium"
-					android:text="Medium Text"
+					android:text="小组人数"
 					android:id="@+id/textView7"
 					android:layout_gravity="center_horizontal"/>
 
 				<NumberPicker
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:id="@+id/numberPicker2"
-					android:layout_gravity="center_horizontal"/>
+					android:id="@+id/npGroupPeopleNumber"
+					android:layout_gravity="center_horizontal"
+					android:clickable="false"/>
 			</LinearLayout>
 		</LinearLayout>
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="保存"
+			android:id="@+id/btnSetGame"
+		    android:layout_gravity="center_horizontal"
+			/>
 	</LinearLayout>
 </RelativeLayout>

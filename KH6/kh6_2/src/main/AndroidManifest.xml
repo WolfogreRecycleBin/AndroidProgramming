@@ -19,6 +19,8 @@
 		</activity>
 		<activity android:name=".GameSettingActivity">
 		</activity>
+		<activity android:name=".GroupSettingActivity">
+		</activity>
 	</application>
 
 </manifest>

@@ -36,7 +36,7 @@ public class GameListViewAdapter extends BaseAdapter {
 
 	@Override
 	public Object getItem(int position) {
-		return null;
+		return gameNames[position];
 	}
 
 	@Override
