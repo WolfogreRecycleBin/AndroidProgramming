@@ -1,5 +1,6 @@
 package wolfogre.kh6_2;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
@@ -22,14 +23,18 @@ public class GroupListViewAdapter extends BaseAdapter {
 	int groupNumber;
 	boolean[] isDownList;
 	LayoutInflater layoutInflater;
+	Activity activity;
+	String gameName;
 
-	public GroupListViewAdapter(Context context, String gameName){
-		SharedPreferences spGroup = context.getSharedPreferences(context.getString(R.string.name_group_number), Context.MODE_PRIVATE);
+	public GroupListViewAdapter(Activity activity, String gameName){
+		SharedPreferences spGroup = activity.getSharedPreferences(activity.getString(R.string.name_group_number), Context.MODE_PRIVATE);
 		groupNumber = spGroup.getInt(gameName, 0);
 		isDownList = new boolean[groupNumber];
 		for(int i = 0; i < isDownList.length; ++i)
 			isDownList[i] = false;
-		layoutInflater = LayoutInflater.from(context);
+		layoutInflater = LayoutInflater.from(activity);
+		this.activity = activity;
+		this.gameName = gameName;
 	}
 
 	@Override
@@ -48,7 +53,7 @@ public class GroupListViewAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		ViewHolder viewHolder;
 		if (convertView == null) {
 			viewHolder = new ViewHolder();
@@ -56,7 +61,7 @@ public class GroupListViewAdapter extends BaseAdapter {
 			viewHolder.tvGroupName = (TextView) convertView.findViewById(R.id.tvGroupName);
 			viewHolder.ivDown = (ImageView) convertView.findViewById(R.id.ivDown);
 			viewHolder.lvPeople = (ListView)convertView.findViewById(R.id.lvPeople);
-			viewHolder.ibAddPeople = (ImageButton)convertView.findViewById(R.id.ibAddPeople);
+			viewHolder.ivAddPeople = (ImageView)convertView.findViewById(R.id.ivAddPeople);
 			viewHolder.rlPeople = (RelativeLayout)convertView.findViewById(R.id.rlPeople);
 			convertView.setTag(viewHolder);
 		} else {
@@ -66,18 +71,17 @@ public class GroupListViewAdapter extends BaseAdapter {
 
 		final RelativeLayout rlPeople = viewHolder.rlPeople;
 		final View finalConvertView = convertView;
-		final int finalPosition = position;
 		viewHolder.ivDown.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (isDownList[finalPosition]) {
-					isDownList[finalPosition] = false;
+				if (isDownList[position]) {
+					isDownList[position] = false;
 					rlPeople.setVisibility(View.INVISIBLE);
 					((ImageView)v).setImageResource(R.drawable.ic_keyboard_arrow_left_black_48dp);
 					AbsListView.LayoutParams lp = new AbsListView.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, 150);
 					finalConvertView.setLayoutParams(lp);
 				} else {
-					isDownList[finalPosition] = true;
+					isDownList[position] = true;
 					rlPeople.setVisibility(View.VISIBLE);
 					((ImageView)v).setImageResource(R.drawable.ic_keyboard_arrow_down_black_48dp);
 					AbsListView.LayoutParams lp = new AbsListView.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, 800);
@@ -99,13 +103,16 @@ public class GroupListViewAdapter extends BaseAdapter {
 			finalConvertView.setLayoutParams(lp);
 		}
 
-		viewHolder.ibAddPeople.setOnClickListener(new View.OnClickListener() {
+		viewHolder.ivAddPeople.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				//TODO
-
+				new AddPeopleDialogFragment().show(activity.getFragmentManager(),
+						activity.getIntent().getStringExtra(activity.getString(R.string.key_game_name))
+						+ "###" + position);
 			}
 		});
+
+		viewHolder.lvPeople.setAdapter(new PeopleListViewAdapter(activity, position, gameName));
 
 		return convertView;
 	}
@@ -114,7 +121,7 @@ public class GroupListViewAdapter extends BaseAdapter {
 		TextView tvGroupName;
 		ImageView ivDown;
 		ListView lvPeople;
-		ImageButton ibAddPeople;
+		ImageView ivAddPeople;
 		RelativeLayout rlPeople;
 	}
 }

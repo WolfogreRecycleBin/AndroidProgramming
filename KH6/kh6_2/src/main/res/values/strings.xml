@@ -12,6 +12,11 @@
 	<string name="name_group_number">group_number</string>
 	<string name="name_group_people_number">group_people_number</string>
 	<string name="name_groups">groups</string>
+	<string name="name_group_0_people">group_0_people</string>
+	<string name="name_group_1_people">group_1_people</string>
+	<string name="name_group_2_people">group_2_people</string>
+	<string name="name_group_3_people">group_3_people</string>
+	<string name="name_group_4_people">group_4_people</string>
 
 
 </resources>

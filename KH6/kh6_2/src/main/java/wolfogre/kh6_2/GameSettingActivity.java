@@ -35,7 +35,7 @@ public class GameSettingActivity extends AppCompatActivity {
 
 		NumberPicker npGroupNumber = (NumberPicker)findViewById(R.id.npGroupNumber);
 		npGroupNumber.setMinValue(0);
-		npGroupNumber.setMaxValue(10);
+		npGroupNumber.setMaxValue(5);
 		npGroupNumber.setValue(groupNumber);
 		npGroupNumber.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
 			@Override
