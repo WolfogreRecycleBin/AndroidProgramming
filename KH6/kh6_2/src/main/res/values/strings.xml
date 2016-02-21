@@ -4,21 +4,9 @@
 		完成一个用于比赛现场管理的app，首先建立一个比赛，然后设置比赛小组数和每组的选手
 		数。选择小组进行小组选手的录入。然后长按小组条目进入比赛结果记录界面记录选手对阵
 		比分。这些比赛数据的存储采用xml 或者文件或者数据库的方式均可。设置中可以预置默认
-		的比分，和小组人数，设置信息使用sharepreferenced 来保存。
+		的比分，和小组人数，设置信息使用SharePreferenced 来保存。
 	</string>
 
-	<string name="name_games">games</string>
-	<string name="key_game_name">game_name</string>
-	<string name="name_group_number">group_number</string>
-	<string name="name_group_people_number">group_people_number</string>
-	<string name="name_groups">groups</string>
-	<string name="name_group_0_people">group_0_people</string>
-	<string name="name_group_1_people">group_1_people</string>
-	<string name="name_group_2_people">group_2_people</string>
-	<string name="name_group_3_people">group_3_people</string>
-	<string name="name_group_4_people">group_4_people</string>
-	<string name="key_group_id">group_id</string>
-	<string name="name_grade">grade</string>
-
-
+	<string name="intent_key_game_name">intent_key_game_name</string>
+	<string name="intent_key_group_id">intent_key_group_id</string>
 </resources>

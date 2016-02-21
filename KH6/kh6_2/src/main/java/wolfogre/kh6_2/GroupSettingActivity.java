@@ -21,7 +21,7 @@ public class GroupSettingActivity extends AppCompatActivity {
 
 		setTitle("分组人员管理");
 
-		gameName = getIntent().getStringExtra(getString(R.string.key_game_name));
+		gameName = getIntent().getStringExtra(getString(R.string.intent_key_game_name));
 
 		((TextView)(findViewById(R.id.tvGameName))).setText(gameName);
 
@@ -34,8 +34,8 @@ public class GroupSettingActivity extends AppCompatActivity {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(GroupSettingActivity.this, GradeSettingActivity.class);
-				intent.putExtra(getString(R.string.key_game_name), gameName);
-				intent.putExtra(getString(R.string.key_group_id), position);
+				intent.putExtra(getString(R.string.intent_key_game_name), gameName);
+				intent.putExtra(getString(R.string.intent_key_group_id), position);
 				startActivity(intent);
 				return true;
 			}

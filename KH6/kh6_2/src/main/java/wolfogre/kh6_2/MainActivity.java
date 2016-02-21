@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 				}
 			}
 		});
+
+		GameInfoBySharedPreferences.setContext(this);
 		new DescriptionDialogFragment().show(getFragmentManager(), "");
 	}
 }

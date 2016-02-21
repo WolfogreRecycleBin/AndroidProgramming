@@ -32,33 +32,8 @@ public class GradeListViewAdapter extends BaseAdapter {
 	int groupId;
 
 	public GradeListViewAdapter(Activity activity, String gameName, int groupId){
-		String groupName = "";
-		switch (groupId){
-			case 0:
-				groupName = activity.getString(R.string.name_group_0_people);
-				break;
-			case 1:
-				groupName = activity.getString(R.string.name_group_1_people);
-				break;
-			case 2:
-				groupName = activity.getString(R.string.name_group_2_people);
-				break;
-			case 3:
-				groupName = activity.getString(R.string.name_group_3_people);
-				break;
-			case 4:
-				groupName = activity.getString(R.string.name_group_4_people);
-				break;
-			default:
-				Toast.makeText(activity, "错误!", Toast.LENGTH_LONG).show();
-		}
-		SharedPreferences spPeople = activity.getSharedPreferences(groupName, Context.MODE_PRIVATE);
-		Set<String> setString = spPeople.getStringSet(gameName, new HashSet<String>());
-		peopleList = new String[setString.size()];
-		int index = 0;
-		for(Object obj : setString.toArray()){
-			peopleList[index++] = (String)obj;
-		}
+		peopleList = GameInfoBySharedPreferences.getPeopleNames(gameName, groupId);
+
 		isDownList = new boolean[peopleList.length];
 		for(int i = 0; i < isDownList.length; ++i)
 			isDownList[i] = false;

@@ -27,8 +27,7 @@ public class GroupListViewAdapter extends BaseAdapter {
 	String gameName;
 
 	public GroupListViewAdapter(Activity activity, String gameName){
-		SharedPreferences spGroup = activity.getSharedPreferences(activity.getString(R.string.name_group_number), Context.MODE_PRIVATE);
-		groupNumber = spGroup.getInt(gameName, 0);
+		groupNumber = GameInfoBySharedPreferences.getGroupNumber(gameName);
 		isDownList = new boolean[groupNumber];
 		for(int i = 0; i < isDownList.length; ++i)
 			isDownList[i] = false;
@@ -107,7 +106,7 @@ public class GroupListViewAdapter extends BaseAdapter {
 			@Override
 			public void onClick(View v) {
 				new AddPeopleDialogFragment().show(activity.getFragmentManager(),
-						activity.getIntent().getStringExtra(activity.getString(R.string.key_game_name))
+						activity.getIntent().getStringExtra(activity.getString(R.string.intent_key_game_name))
 						+ "###" + position);
 			}
 		});

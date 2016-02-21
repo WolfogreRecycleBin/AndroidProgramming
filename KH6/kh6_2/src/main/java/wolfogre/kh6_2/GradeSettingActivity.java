@@ -13,8 +13,8 @@ public class GradeSettingActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_grade_setting);
 		setTitle("比分记录");
 
-		String gameName = getIntent().getStringExtra(getString(R.string.key_game_name));
-		int groupId = getIntent().getIntExtra(getString(R.string.key_group_id), 0);
+		String gameName = getIntent().getStringExtra(getString(R.string.intent_key_game_name));
+		int groupId = getIntent().getIntExtra(getString(R.string.intent_key_group_id), 0);
 
 		((TextView)findViewById(R.id.tvGroupName)).setText("第" + (groupId + 1) + "组");
 

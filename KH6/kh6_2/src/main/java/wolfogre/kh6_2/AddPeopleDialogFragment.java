@@ -12,7 +12,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.Format;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class AddPeopleDialogFragment  extends DialogFragment {
@@ -34,33 +36,7 @@ public class AddPeopleDialogFragment  extends DialogFragment {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						String[] strings = getTag().split("###");
-						String groupName = "";
-						switch (strings[1]){
-							case "0":
-								groupName = getActivity().getString(R.string.name_group_0_people);
-								break;
-							case "1":
-								groupName = getActivity().getString(R.string.name_group_1_people);
-								break;
-							case "2":
-								groupName = getActivity().getString(R.string.name_group_2_people);
-								break;
-							case "3":
-								groupName = getActivity().getString(R.string.name_group_3_people);
-								break;
-							case "4":
-								groupName = getActivity().getString(R.string.name_group_4_people);
-								break;
-							default:
-								Toast.makeText(getActivity(),"错误!",Toast.LENGTH_LONG).show();
-						}
-						SharedPreferences spGroupPeople = getActivity().getSharedPreferences(groupName, Context.MODE_PRIVATE);
-						SharedPreferences.Editor speGroupPeople = spGroupPeople.edit();
-						Set<String> peopleList = spGroupPeople.getStringSet(strings[0], new HashSet<String>());
-						peopleList.add(etNewPeopleName.getText().toString());
-						speGroupPeople.putStringSet(strings[0], peopleList);
-						speGroupPeople.apply();
-
+						GameInfoBySharedPreferences.addPeopleName(strings[0], Integer.parseInt(strings[1]), etNewPeopleName.getText().toString());
 						dialog.cancel();
 					}
 				});

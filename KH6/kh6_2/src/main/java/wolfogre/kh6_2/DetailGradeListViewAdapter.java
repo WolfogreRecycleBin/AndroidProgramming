@@ -24,39 +24,11 @@ public class DetailGradeListViewAdapter extends BaseAdapter {
 
 	public DetailGradeListViewAdapter(Context context, int groupId, String gameName, String selfName){
 		this.selfName = selfName;
-		String groupName = "";
-		switch (groupId){
-			case 0:
-				groupName = context.getString(R.string.name_group_0_people);
-				break;
-			case 1:
-				groupName = context.getString(R.string.name_group_1_people);
-				break;
-			case 2:
-				groupName = context.getString(R.string.name_group_2_people);
-				break;
-			case 3:
-				groupName = context.getString(R.string.name_group_3_people);
-				break;
-			case 4:
-				groupName = context.getString(R.string.name_group_4_people);
-				break;
-			default:
-				Toast.makeText(context, "错误!", Toast.LENGTH_LONG).show();
-		}
-		SharedPreferences spPeople = context.getSharedPreferences(groupName, Context.MODE_PRIVATE);
-		Set<String> setString = (spPeople.getStringSet(gameName, new HashSet<String>()));
-		opponentNames = new String[setString.size() - 1];
-		int index = 0;
-		for(Object obj : setString.toArray()){
-			if(!obj.equals(selfName))
-				opponentNames[index++] = (String)obj;
-		}
+		opponentNames = GameInfoBySharedPreferences.getOpponentNames(gameName, groupId, selfName);
 
-		SharedPreferences spGrade = context.getSharedPreferences(context.getString(R.string.name_grade), Context.MODE_PRIVATE);
 		grades = new String[opponentNames.length];
 		for(int i = 0; i < grades.length; ++i){
-			grades[i] = spGrade.getString(gameName + groupName + selfName + opponentNames[i], "0:0");
+			grades[i] = GameInfoBySharedPreferences.getGrade(gameName, groupId, selfName, opponentNames[i]);
 		}
 
 		layoutInflater = LayoutInflater.from(context);
@@ -69,7 +41,7 @@ public class DetailGradeListViewAdapter extends BaseAdapter {
 
 	@Override
 	public Object getItem(int position) {
-		return null;
+		return opponentNames[position];
 	}
 
 	@Override

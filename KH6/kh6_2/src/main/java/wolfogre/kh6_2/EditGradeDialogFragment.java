@@ -45,30 +45,7 @@ public class EditGradeDialogFragment extends DialogFragment {
 				.setNegativeButton("确认", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						String groupName = "";
-						switch (strings[1]){
-							case "0":
-								groupName = getActivity().getString(R.string.name_group_0_people);
-								break;
-							case "1":
-								groupName = getActivity().getString(R.string.name_group_1_people);
-								break;
-							case "2":
-								groupName = getActivity().getString(R.string.name_group_2_people);
-								break;
-							case "3":
-								groupName = getActivity().getString(R.string.name_group_3_people);
-								break;
-							case "4":
-								groupName = getActivity().getString(R.string.name_group_4_people);
-								break;
-							default:
-								Toast.makeText(getActivity(),"错误!",Toast.LENGTH_LONG).show();
-						}
-						SharedPreferences.Editor speGrade = getActivity().getSharedPreferences(groupName, Context.MODE_PRIVATE).edit();
-						speGrade.putString(strings[0] + groupName + strings[2] + strings[3], etSelfGrade.getText().toString() + ":" + etOpponentGrade.getText().toString());
-						speGrade.apply();
-
+						GameInfoBySharedPreferences.setGrade(strings[0], Integer.parseInt(strings[1]), strings[2], strings[3], etSelfGrade.getText().toString() + ":" + etOpponentGrade.getText().toString());
 						dialog.cancel();
 					}
 				});

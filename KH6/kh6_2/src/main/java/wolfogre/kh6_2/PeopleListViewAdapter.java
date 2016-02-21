@@ -21,33 +21,7 @@ public class PeopleListViewAdapter extends BaseAdapter {
 	LayoutInflater layoutInflater;
 
 	public PeopleListViewAdapter(Context context, int groupId, String gameName){
-		String groupName = "";
-		switch (groupId){
-			case 0:
-				groupName = context.getString(R.string.name_group_0_people);
-				break;
-			case 1:
-				groupName = context.getString(R.string.name_group_1_people);
-				break;
-			case 2:
-				groupName = context.getString(R.string.name_group_2_people);
-				break;
-			case 3:
-				groupName = context.getString(R.string.name_group_3_people);
-				break;
-			case 4:
-				groupName = context.getString(R.string.name_group_4_people);
-				break;
-			default:
-				Toast.makeText(context, "错误!", Toast.LENGTH_LONG).show();
-		}
-		SharedPreferences spPeople = context.getSharedPreferences(groupName, Context.MODE_PRIVATE);
-		Set<String> setString = spPeople.getStringSet(gameName, new HashSet<String>());
-		peopleNames = new String[setString.size()];
-		int index = 0;
-		for(Object obj : setString.toArray()){
-			peopleNames[index++] = (String)obj;
-		}
+		peopleNames = GameInfoBySharedPreferences.getPeopleNames(gameName, groupId);
 		layoutInflater = LayoutInflater.from(context);
 	}
 

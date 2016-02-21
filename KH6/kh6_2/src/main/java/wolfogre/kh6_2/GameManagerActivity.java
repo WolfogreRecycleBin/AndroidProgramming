@@ -25,12 +25,7 @@ public class GameManagerActivity extends AppCompatActivity {
 		findViewById(R.id.btnNewGame).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				SharedPreferences spGame = getSharedPreferences(getString(R.string.name_games), MODE_PRIVATE);
-				Set<String> stringSet = spGame.getStringSet(getString(R.string.key_game_name), new HashSet<String>());
-				stringSet.add(etGameName.getText().toString());
-				SharedPreferences.Editor speGame = getSharedPreferences(getString(R.string.name_games), MODE_PRIVATE).edit();
-				speGame.putStringSet(getString(R.string.key_game_name),stringSet);
-				speGame.apply();
+				GameInfoBySharedPreferences.addGameName(etGameName.getText().toString());
 				etGameName.setText("");
 				etGameTime.setText("");
 				updateGameList();
@@ -41,7 +36,7 @@ public class GameManagerActivity extends AppCompatActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(GameManagerActivity.this, GameSettingActivity.class);
-				intent.putExtra(getString(R.string.key_game_name), (String) ((ListView) parent).getAdapter().getItem(position));
+				intent.putExtra(getString(R.string.intent_key_game_name), (String) ((ListView) parent).getAdapter().getItem(position));
 				startActivity(intent);
 			}
 		});
@@ -50,7 +45,7 @@ public class GameManagerActivity extends AppCompatActivity {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(GameManagerActivity.this, GroupSettingActivity.class);
-				intent.putExtra(getString(R.string.key_game_name), (String) ((ListView) parent).getAdapter().getItem(position));
+				intent.putExtra(getString(R.string.intent_key_game_name), (String) ((ListView) parent).getAdapter().getItem(position));
 				startActivity(intent);
 				return true;
 			}
