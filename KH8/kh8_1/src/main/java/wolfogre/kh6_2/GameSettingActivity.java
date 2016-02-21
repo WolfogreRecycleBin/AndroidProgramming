@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
 public class GameSettingActivity extends AppCompatActivity {
 
@@ -23,22 +23,22 @@ public class GameSettingActivity extends AppCompatActivity {
 		NumberPicker npGroupNumber = (NumberPicker)findViewById(R.id.npGroupNumber);
 		npGroupNumber.setMinValue(0);
 		npGroupNumber.setMaxValue(5);
-		npGroupNumber.setValue(GameInfoBySharedPreferences.getGroupNumber(gameName));
+		npGroupNumber.setValue(GameInfoByJson.getGroupNumber(gameName));
 		npGroupNumber.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
 			@Override
 			public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-				GameInfoBySharedPreferences.setGroupNumber(gameName, newVal);
+				GameInfoByJson.setGroupNumber(gameName, newVal);
 			}
 		});
 
 		NumberPicker npGroupPeopleNumber = (NumberPicker)findViewById(R.id.npGroupPeopleNumber);
 		npGroupPeopleNumber.setMinValue(0);
 		npGroupPeopleNumber.setMaxValue(10);
-		npGroupPeopleNumber.setValue(GameInfoBySharedPreferences.getMaxPeopleNumber(gameName));
+		npGroupPeopleNumber.setValue(GameInfoByJson.getMaxPeopleNumber(gameName));
 		npGroupPeopleNumber.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
 			@Override
 			public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-				GameInfoBySharedPreferences.setMaxPeopleNumber(gameName, newVal);
+				GameInfoByJson.setMaxPeopleNumber(gameName, newVal);
 			}
 		});
 

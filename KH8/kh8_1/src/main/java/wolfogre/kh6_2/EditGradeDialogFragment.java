@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 02/21/2016.
@@ -43,7 +43,7 @@ public class EditGradeDialogFragment extends DialogFragment {
 					public void onClick(DialogInterface dialog, int which) {
 						if(etSelfGrade.getText().toString().isEmpty() || etOpponentGrade.getText().toString().isEmpty())
 							return;
-						GameInfoBySharedPreferences.setGrade(strings[0], Integer.parseInt(strings[1]), strings[2], strings[3], etSelfGrade.getText().toString() + ":" + etOpponentGrade.getText().toString());
+						GameInfoByJson.setGrade(strings[0], Integer.parseInt(strings[1]), strings[2], strings[3], etSelfGrade.getText().toString() + ":" + etOpponentGrade.getText().toString());
 					}
 				});
 

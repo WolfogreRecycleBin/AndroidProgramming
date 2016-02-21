@@ -9,9 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
-public class AddPeopleDialogFragment  extends DialogFragment {
+public class AddPeopleDialogFragment extends DialogFragment {
 
 	@Override
 	public Dialog onCreateDialog(final Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class AddPeopleDialogFragment  extends DialogFragment {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						String[] strings = getTag().split("###");
-						GameInfoBySharedPreferences.addPeopleName(strings[0], Integer.parseInt(strings[1]), etNewPeopleName.getText().toString());
+						GameInfoByJson.addPeopleName(strings[0], Integer.parseInt(strings[1]), etNewPeopleName.getText().toString());
 						dialog.cancel();
 					}
 				});

@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
 public class GroupSettingActivity extends AppCompatActivity {
 

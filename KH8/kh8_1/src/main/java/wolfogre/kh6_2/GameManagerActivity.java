@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
 public class GameManagerActivity extends AppCompatActivity {
 
@@ -23,7 +23,7 @@ public class GameManagerActivity extends AppCompatActivity {
 		findViewById(R.id.btnNewGame).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				GameInfoBySharedPreferences.addGameName(etGameName.getText().toString());
+				GameInfoByJson.addGameName(etGameName.getText().toString());
 				etGameName.setText("");
 				etGameTime.setText("");
 				updateGameList();

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
 public class GradeSettingActivity extends AppCompatActivity {
 

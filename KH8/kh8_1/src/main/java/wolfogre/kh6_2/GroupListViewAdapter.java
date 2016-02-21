@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
 
 /**
@@ -26,7 +26,7 @@ public class GroupListViewAdapter extends BaseAdapter {
 	String gameName;
 
 	public GroupListViewAdapter(Activity activity, String gameName){
-		groupNumber = GameInfoBySharedPreferences.getGroupNumber(gameName);
+		groupNumber = GameInfoByJson.getGroupNumber(gameName);
 		isDownList = new boolean[groupNumber];
 		for(int i = 0; i < isDownList.length; ++i)
 			isDownList[i] = false;

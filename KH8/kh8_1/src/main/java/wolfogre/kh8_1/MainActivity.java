@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 
-		GameInfoBySharedPreferences.setContext(this);
-
 		new TipsDialogFragment().show(getFragmentManager(), getString(R.string.app_warning));
 		new TipsDialogFragment().show(getFragmentManager(), getString(R.string.app_description));
 

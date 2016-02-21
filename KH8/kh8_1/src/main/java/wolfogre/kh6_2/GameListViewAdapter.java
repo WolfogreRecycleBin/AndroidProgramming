@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 02/17/2016.
@@ -17,7 +17,7 @@ public class GameListViewAdapter extends BaseAdapter {
 	LayoutInflater layoutInflater;
 
 	public GameListViewAdapter(Context context){
-		gameNames = GameInfoBySharedPreferences.getGameNames();
+		gameNames = GameInfoByJson.getGameNames();
 		layoutInflater = LayoutInflater.from(context);
 	}
 

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 02/19/2016.
@@ -18,7 +18,7 @@ public class PeopleListViewAdapter extends BaseAdapter {
 	LayoutInflater layoutInflater;
 
 	public PeopleListViewAdapter(Context context, int groupId, String gameName){
-		peopleNames = GameInfoBySharedPreferences.getPeopleNames(gameName, groupId);
+		peopleNames = GameInfoByJson.getPeopleNames(gameName, groupId);
 		layoutInflater = LayoutInflater.from(context);
 	}
 

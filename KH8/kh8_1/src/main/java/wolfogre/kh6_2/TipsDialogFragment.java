@@ -6,7 +6,7 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 02/08/2016.

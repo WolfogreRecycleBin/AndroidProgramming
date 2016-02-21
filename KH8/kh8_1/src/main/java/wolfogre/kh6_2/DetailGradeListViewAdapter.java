@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 02/19/2016.
@@ -21,11 +21,11 @@ public class DetailGradeListViewAdapter extends BaseAdapter {
 
 	public DetailGradeListViewAdapter(Context context, int groupId, String gameName, String selfName){
 		this.selfName = selfName;
-		opponentNames = GameInfoBySharedPreferences.getOpponentNames(gameName, groupId, selfName);
+		opponentNames = GameInfoByJson.getOpponentNames(gameName, groupId, selfName);
 
 		grades = new String[opponentNames.length];
 		for(int i = 0; i < grades.length; ++i){
-			grades[i] = GameInfoBySharedPreferences.getGrade(gameName, groupId, selfName, opponentNames[i]);
+			grades[i] = GameInfoByJson.getGrade(gameName, groupId, selfName, opponentNames[i]);
 		}
 
 		layoutInflater = LayoutInflater.from(context);

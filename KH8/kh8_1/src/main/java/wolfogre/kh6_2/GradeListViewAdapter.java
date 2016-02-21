@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import wolfogre.kh8_1.R;
+import wolfogre.kh8_1.*;
 
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 02/19/2016.
@@ -28,7 +28,7 @@ public class GradeListViewAdapter extends BaseAdapter {
 	int groupId;
 
 	public GradeListViewAdapter(Activity activity, String gameName, int groupId){
-		peopleList = GameInfoBySharedPreferences.getPeopleNames(gameName, groupId);
+		peopleList = GameInfoByJson.getPeopleNames(gameName, groupId);
 
 		isDownList = new boolean[peopleList.length];
 		for(int i = 0; i < isDownList.length; ++i)
