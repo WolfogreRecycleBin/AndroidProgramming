@@ -1,6 +1,7 @@
 package wolfogre.kh6_2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 
 public class GroupSettingActivity extends AppCompatActivity {
 
+	String gameName;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -18,7 +21,7 @@ public class GroupSettingActivity extends AppCompatActivity {
 
 		setTitle("分组人员管理");
 
-		String gameName = getIntent().getStringExtra(getString(R.string.key_game_name));
+		gameName = getIntent().getStringExtra(getString(R.string.key_game_name));
 
 		((TextView)(findViewById(R.id.tvGameName))).setText(gameName);
 
@@ -30,7 +33,10 @@ public class GroupSettingActivity extends AppCompatActivity {
 		lvGroups.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-				Toast.makeText(context, "长按了" + position, Toast.LENGTH_LONG).show();
+				Intent intent = new Intent(GroupSettingActivity.this, GradeSettingActivity.class);
+				intent.putExtra(getString(R.string.key_game_name), gameName);
+				intent.putExtra(getString(R.string.key_group_id), position);
+				startActivity(intent);
 				return true;
 			}
 		});

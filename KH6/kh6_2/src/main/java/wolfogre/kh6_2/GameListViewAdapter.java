@@ -21,6 +21,13 @@ public class GameListViewAdapter extends BaseAdapter {
 	public GameListViewAdapter(Context context){
 		SharedPreferences spGame = context.getSharedPreferences(context.getString(R.string.name_games), Context.MODE_PRIVATE);
 		Set<String> setString = spGame.getStringSet(context.getString(R.string.key_game_name), new HashSet<String>());
+		// FIXME: There is a bug!
+		// I input more than one game, than closed the APP cleaned memory,
+		// than restart it, there was only one game,
+		// I debug it, found the size of getStringSet() was one,
+		// I don't know why,
+		// I can't fix it.
+
 		gameNames = new String[setString.size()];
 		int index = 0;
 		for(Object obj : setString.toArray()){

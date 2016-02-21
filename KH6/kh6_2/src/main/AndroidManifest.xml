@@ -21,6 +21,8 @@
 		</activity>
 		<activity android:name=".GroupSettingActivity">
 		</activity>
+		<activity android:name=".GradeSettingActivity">
+		</activity>
 	</application>
 
 </manifest>
