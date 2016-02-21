@@ -10,13 +10,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class AddPeopleDialogFragment  extends DialogFragment {
-
+/**
+ * Created by Jason Song(wolfogre@outlook.com) on 02/21/2016.
+ */
+public class EditGradeDialogFragment extends DialogFragment {
 	@Override
 	public Dialog onCreateDialog(final Bundle savedInstanceState) {
 		super.onCreateDialog(savedInstanceState);
@@ -24,16 +27,24 @@ public class AddPeopleDialogFragment  extends DialogFragment {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
 		LayoutInflater inflater = getActivity().getLayoutInflater();
-		View view = inflater.inflate(R.layout.fragment_add_people_dialog, null);
+		View view = inflater.inflate(R.layout.fragment_edit_grade_dialog, null);
 
-		final EditText etNewPeopleName = (EditText)view.findViewById(R.id.etNewPeopleName);
+		TextView tvSelfName = (TextView)view.findViewById(R.id.tvSelfName);
+		TextView tvOpponentName = (TextView)view.findViewById(R.id.tvOpponentName);
 
-		builder.setTitle("输入新选手名字")
+		final EditText etSelfGrade = (EditText)view.findViewById(R.id.etSelfGrade);
+		final EditText etOpponentGrade = (EditText)view.findViewById(R.id.etOpponentGrade);
+
+		final String[] strings = getTag().split("###");
+
+		tvSelfName.setText(strings[2]);
+		tvOpponentName.setText(strings[3]);
+
+		builder.setTitle("输入比分")
 				.setView(view)
 				.setNegativeButton("确认", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						String[] strings = getTag().split("###");
 						String groupName = "";
 						switch (strings[1]){
 							case "0":
@@ -54,18 +65,17 @@ public class AddPeopleDialogFragment  extends DialogFragment {
 							default:
 								Toast.makeText(getActivity(),"错误!",Toast.LENGTH_LONG).show();
 						}
-						SharedPreferences spGroupPeople = getActivity().getSharedPreferences(groupName, Context.MODE_PRIVATE);
-						SharedPreferences.Editor speGroupPeople = spGroupPeople.edit();
-						Set<String> peopleList = spGroupPeople.getStringSet(strings[0], new HashSet<String>());
-						peopleList.add(etNewPeopleName.getText().toString());
-						speGroupPeople.putStringSet(strings[0], peopleList);
-						speGroupPeople.apply();
+						SharedPreferences.Editor speGrade = getActivity().getSharedPreferences(groupName, Context.MODE_PRIVATE).edit();
+						speGrade.putString(strings[0] + groupName + strings[2] + strings[3], etSelfGrade.getText().toString() + ":" + etOpponentGrade.getText().toString());
+						speGrade.apply();
 
 						dialog.cancel();
 					}
 				});
 
+
 		// Create the AlertDialog object and return it
 		return builder.create();
 	}
+
 }

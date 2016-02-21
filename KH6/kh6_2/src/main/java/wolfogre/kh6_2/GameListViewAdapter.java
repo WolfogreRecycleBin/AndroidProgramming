@@ -25,8 +25,8 @@ public class GameListViewAdapter extends BaseAdapter {
 		// I input more than one game, than closed the APP cleaned memory,
 		// than restart it, there was only one game,
 		// I debug it, found the size of getStringSet() was one,
-		// I don't know why,
-		// I can't fix it.
+		// I don't know why, but a possible cause is that the SharedPreferences belongs to a context, not a APP, god knows.
+		// I have no time to fix it.
 
 		gameNames = new String[setString.size()];
 		int index = 0;

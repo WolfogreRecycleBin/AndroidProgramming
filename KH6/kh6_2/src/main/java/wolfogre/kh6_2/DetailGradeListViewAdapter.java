@@ -18,6 +18,7 @@ import java.util.Set;
 public class DetailGradeListViewAdapter extends BaseAdapter {
 
 	String[] opponentNames;
+	String[] grades;
 	String selfName;
 	LayoutInflater layoutInflater;
 
@@ -51,6 +52,13 @@ public class DetailGradeListViewAdapter extends BaseAdapter {
 			if(!obj.equals(selfName))
 				opponentNames[index++] = (String)obj;
 		}
+
+		SharedPreferences spGrade = context.getSharedPreferences(context.getString(R.string.name_grade), Context.MODE_PRIVATE);
+		grades = new String[opponentNames.length];
+		for(int i = 0; i < grades.length; ++i){
+			grades[i] = spGrade.getString(gameName + groupName + selfName + opponentNames[i], "0:0");
+		}
+
 		layoutInflater = LayoutInflater.from(context);
 	}
 
@@ -82,6 +90,7 @@ public class DetailGradeListViewAdapter extends BaseAdapter {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
 		viewHolder.tvOpponentName.setText(opponentNames[position]);
+		viewHolder.tvDetailGrade.setText(grades[position]);
 		return convertView;
 	}
 

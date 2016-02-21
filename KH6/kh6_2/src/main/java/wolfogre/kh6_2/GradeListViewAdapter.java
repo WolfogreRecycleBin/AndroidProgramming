@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -107,13 +108,13 @@ public class GradeListViewAdapter extends BaseAdapter {
 				if (isDownList[position]) {
 					isDownList[position] = false;
 					rlGrade.setVisibility(View.INVISIBLE);
-					((ImageView)v).setImageResource(R.drawable.ic_keyboard_arrow_left_black_48dp);
+					((ImageView) v).setImageResource(R.drawable.ic_keyboard_arrow_left_black_48dp);
 					AbsListView.LayoutParams lp = new AbsListView.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, 150);
 					finalConvertView.setLayoutParams(lp);
 				} else {
 					isDownList[position] = true;
 					rlGrade.setVisibility(View.VISIBLE);
-					((ImageView)v).setImageResource(R.drawable.ic_keyboard_arrow_down_black_48dp);
+					((ImageView) v).setImageResource(R.drawable.ic_keyboard_arrow_down_black_48dp);
 					AbsListView.LayoutParams lp = new AbsListView.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, 800);
 					finalConvertView.setLayoutParams(lp);
 				}
@@ -134,7 +135,7 @@ public class GradeListViewAdapter extends BaseAdapter {
 		}
 
 		viewHolder.lvDetailGrade.setAdapter(new DetailGradeListViewAdapter(activity, groupId, gameName, peopleList[position]));
-
+		//TODO
 		return convertView;
 	}
 
