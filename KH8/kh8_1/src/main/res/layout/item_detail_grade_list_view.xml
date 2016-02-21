@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tvDetailGrade"
+        android:layout_alignTop="@+id/tvOpponentName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tvOpponentName"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/tvDetailGrade"
+        android:layout_toEndOf="@+id/tvDetailGrade"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"/>
+</RelativeLayout>

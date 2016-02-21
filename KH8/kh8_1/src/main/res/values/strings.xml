@@ -1,0 +1,12 @@
+<resources>
+	<string name="app_name">KH8_1</string>
+	<string name="app_description">
+		请就数据存储章节中的比赛管理app 的要求，运用json 或者xml 文件替代sqlite 作为数据存储方式。
+	</string>
+	<string name="app_warning">
+		由于一些原因，这个APP存在大量Bug，部分是由于设计缺陷，但大多数是我偷懒所致，由于时间紧迫，来不及细究了。
+	</string>
+
+	<string name="intent_key_game_name">intent_key_game_name</string>
+	<string name="intent_key_group_id">intent_key_group_id</string>
+</resources>
