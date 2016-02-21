@@ -1,8 +1,6 @@
 package wolfogre.kh6_2;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 02/19/2016.
@@ -51,7 +45,7 @@ public class GradeListViewAdapter extends BaseAdapter {
 
 	@Override
 	public Object getItem(int position) {
-		return null;
+		return peopleList[position];
 	}
 
 	@Override
@@ -110,7 +104,14 @@ public class GradeListViewAdapter extends BaseAdapter {
 		}
 
 		viewHolder.lvDetailGrade.setAdapter(new DetailGradeListViewAdapter(activity, groupId, gameName, peopleList[position]));
-		//TODO
+		final String selfName = (String)getItem(position);
+		viewHolder.lvDetailGrade.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				new EditGradeDialogFragment().show(activity.getFragmentManager(), gameName + "###" + groupId + "###" + selfName + "###" + ((TextView)view.findViewById(R.id.tvOpponentName)).getText());
+
+			}
+		});
 		return convertView;
 	}
 

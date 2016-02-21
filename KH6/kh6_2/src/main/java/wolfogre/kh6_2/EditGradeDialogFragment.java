@@ -3,18 +3,12 @@ package wolfogre.kh6_2;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 02/21/2016.
@@ -45,8 +39,9 @@ public class EditGradeDialogFragment extends DialogFragment {
 				.setNegativeButton("确认", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
+						if(etSelfGrade.getText().toString().isEmpty() || etOpponentGrade.getText().toString().isEmpty())
+							return;
 						GameInfoBySharedPreferences.setGrade(strings[0], Integer.parseInt(strings[1]), strings[2], strings[3], etSelfGrade.getText().toString() + ":" + etOpponentGrade.getText().toString());
-						dialog.cancel();
 					}
 				});
 

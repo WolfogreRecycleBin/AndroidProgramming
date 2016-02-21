@@ -1,16 +1,11 @@
 package wolfogre.kh6_2;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 02/19/2016.

@@ -1,12 +1,10 @@
 package wolfogre.kh6_2;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 

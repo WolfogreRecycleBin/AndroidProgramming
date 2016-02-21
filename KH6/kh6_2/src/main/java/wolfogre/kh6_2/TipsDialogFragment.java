@@ -9,14 +9,14 @@ import android.os.Bundle;
 /**
  * Created by Jason Song(wolfogre@outlook.com) on 02/08/2016.
  */
-public class DescriptionDialogFragment extends DialogFragment {
+public class TipsDialogFragment extends DialogFragment {
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		super.onCreateDialog(savedInstanceState);
 		// Use the Builder class for convenient dialog construction
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-		builder.setMessage(getString(R.string.app_description))
+		builder.setMessage(getTag())
 				.setNegativeButton("确认", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {

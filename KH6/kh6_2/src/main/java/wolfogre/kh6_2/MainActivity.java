@@ -2,8 +2,8 @@ package wolfogre.kh6_2;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -24,15 +24,18 @@ public class MainActivity extends AppCompatActivity {
 		gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Toast.makeText(context,"你点击了" + GridViewAdapter.texts[position], Toast.LENGTH_LONG).show();
-				if(position == 0){
-					Intent intent = new Intent(MainActivity.this,GameManagerActivity.class);
+				Toast.makeText(context, "你点击了" + GridViewAdapter.texts[position], Toast.LENGTH_LONG).show();
+				if (position == 0) {
+					Intent intent = new Intent(MainActivity.this, GameManagerActivity.class);
 					startActivity(intent);
 				}
 			}
 		});
 
 		GameInfoBySharedPreferences.setContext(this);
-		new DescriptionDialogFragment().show(getFragmentManager(), "");
+
+		new TipsDialogFragment().show(getFragmentManager(), getString(R.string.app_warning));
+		new TipsDialogFragment().show(getFragmentManager(), getString(R.string.app_description));
+
 	}
 }

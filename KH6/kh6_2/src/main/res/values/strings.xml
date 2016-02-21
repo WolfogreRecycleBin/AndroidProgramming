@@ -1,10 +1,10 @@
 <resources>
 	<string name="app_name">KH6_2</string>
 	<string name="app_description">
-		完成一个用于比赛现场管理的app，首先建立一个比赛，然后设置比赛小组数和每组的选手
-		数。选择小组进行小组选手的录入。然后长按小组条目进入比赛结果记录界面记录选手对阵
-		比分。这些比赛数据的存储采用xml 或者文件或者数据库的方式均可。设置中可以预置默认
-		的比分，和小组人数，设置信息使用SharePreferenced 来保存。
+		完成一个用于比赛现场管理的app，首先建立一个比赛，然后设置比赛小组数和每组的选手数。选择小组进行小组选手的录入。然后长按小组条目进入比赛结果记录界面记录选手对阵比分。这些比赛数据的存储采用xml 或者文件或者数据库的方式均可。设置中可以预置默认的比分，和小组人数，设置信息使用SharedPreferences 来保存。
+	</string>
+	<string name="app_warning">
+		由于一些原因，这个APP存在大量Bug，部分是由于设计缺陷，但大多数是我偷懒所致，由于时间紧迫，来不及细究了。
 	</string>
 
 	<string name="intent_key_game_name">intent_key_game_name</string>
