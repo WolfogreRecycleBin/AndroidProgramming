@@ -13,7 +13,7 @@
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="@string/question"
+		android:text="@string/app_description"
 		android:id="@+id/textView"/>
 
 	<Button
@@ -39,6 +39,24 @@
 		android:text="向服务请求数据"
 		android:id="@+id/button3"
 		android:layout_below="@+id/button2"
+		android:layout_centerHorizontal="true"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="收到来自服务的随机数："
+		android:id="@+id/textView2"
+		android:layout_below="@+id/button3"
+		android:layout_centerHorizontal="true"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="？？？"
+		android:id="@+id/textView3"
+		android:layout_below="@+id/textView2"
 		android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
