@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:animateLayoutChanges="true"
+    tools:context="com.example.me.propertyanimationsample.MainActivity">
+
+    <Button
+        android:id="@+id/btClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="valueAnimator"
+        android:onClick="btOnclick"/>
+    <Button
+        android:id="@+id/btObjectanim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Objectanim"
+        android:layout_below="@+id/btClick"
+        android:onClick="btObjClick"
+        />
+    <Button
+        android:id="@+id/btViewPropertyanim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="viewpropertyanim"
+        android:layout_below="@+id/btObjectanim"
+        android:onClick="btVpaClick"
+        />
+    <Button
+    android:id="@+id/btAnimset"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/btViewPropertyanim"
+    android:text="animset"
+    android:onClick="btAsetClick"/>
+    <Button
+        android:id="@+id/btKeyframe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btAnimset"
+        android:text="keyframe"
+        android:onClick="btKeyClick"/>
+
+</RelativeLayout>

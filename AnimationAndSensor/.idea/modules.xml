@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AnimationAndSensor.iml" filepath="$PROJECT_DIR$/AnimationAndSensor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DrawableAnimationSample/DrawableAnimationSample.iml" filepath="$PROJECT_DIR$/DrawableAnimationSample/DrawableAnimationSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PropertyAnimationSample/PropertyAnimationSample.iml" filepath="$PROJECT_DIR$/PropertyAnimationSample/PropertyAnimationSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SensorBaseSample/SensorBaseSample.iml" filepath="$PROJECT_DIR$/SensorBaseSample/SensorBaseSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewAnimationSample/ViewAnimationSample.iml" filepath="$PROJECT_DIR$/ViewAnimationSample/ViewAnimationSample.iml" />
+    </modules>
+  </component>
+</project>
